@@ -24,7 +24,7 @@ class HomeController extends GetxController {
     super.onInit();
 
     homeTab = HomeTab();
-    loadUsers();
+    // loadUsers();
     notificationTab = NotificationTab();
     profileTab = ProfileTab();
   }

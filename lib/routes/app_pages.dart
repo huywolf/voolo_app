@@ -1,6 +1,6 @@
 import 'package:voolo_app/modules/auth/auth.dart';
 import 'package:voolo_app/modules/home/home.dart';
-import 'package:voolo_app/modules/me/cards/cards_screen.dart';
+import 'package:voolo_app/modules/profile/cards/cards_screen.dart';
 import 'package:voolo_app/modules/modules.dart';
 import 'package:get/get.dart';
 

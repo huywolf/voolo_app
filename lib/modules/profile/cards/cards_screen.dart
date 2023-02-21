@@ -74,7 +74,7 @@ class _CardsScreenState extends State<CardsScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _buildMenuButton('Unbind card', hexToColor('#007AFF'), onTap: () {
+          _buildMenuButton('Unbind card', Color(0xff007AFF), onTap: () {
             print('Unbind card');
             Navigator.of(context).pop();
           }),

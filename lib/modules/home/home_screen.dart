@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/modules/home/home.dart';
 import 'package:voolo_app/shared/shared.dart';
-
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -21,27 +19,15 @@ class HomeScreen extends GetView<HomeController> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          _buildNavigationBarItem(
-            'home'.tr,
-            MainTabs.home == controller.currentTab.value ? "icon_home_activited.svg" : "icon_home.svg",
-          ),
-          _buildNavigationBarItem(
-            "notification".tr,
-            MainTabs.notifcation == controller.currentTab.value ? "icon_notification.svg" : "icon_notification.svg",
-          ),
-          _buildNavigationBarItem(
-            "Me",
-            MainTabs.profile == controller.currentTab.value ? "icon_profile_activited.svg" : "icon_profile.svg",
-          )
+          _buildNavigationBarItem('home'.tr, Icons.home, MainTabs.home),
+          _buildNavigationBarItem("notification".tr, Icons.notifications, MainTabs.notifcation),
+          _buildNavigationBarItem("profile".tr, Icons.account_circle_outlined, MainTabs.profile)
         ],
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: ColorConstants.black,
-        currentIndex: controller.getCurrentIndex(controller.currentTab.value),
         selectedItemColor: ColorConstants.black,
-        selectedLabelStyle: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-        ),
+        selectedLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        currentIndex: controller.getCurrentIndex(controller.currentTab.value),
         onTap: (index) => controller.switchTab(index),
       ),
     );
@@ -60,11 +46,12 @@ class HomeScreen extends GetView<HomeController> {
     }
   }
 
-  BottomNavigationBarItem _buildNavigationBarItem(String label, String svg) {
+  BottomNavigationBarItem _buildNavigationBarItem(String label, IconData iconData, MainTabs currentTab) {
     return BottomNavigationBarItem(
-      icon: SvgPicture.asset(
-        'assets/svgs/$svg',
-        width: 20,
+      icon: Icon(
+        iconData,
+        size: 25,
+        color: currentTab == controller.currentTab.value ? Colors.purple : null,
       ),
       label: label,
     );

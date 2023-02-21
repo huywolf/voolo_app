@@ -108,7 +108,7 @@ class ProfileTab extends GetView<HomeController> {
             height: 24,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: hexToColor('#9A434343'),
+              color: Color(0xff9A434343),
             ),
             child: Text(
               controller.user.value!.firstName ?? '',

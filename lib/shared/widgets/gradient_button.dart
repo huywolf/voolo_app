@@ -29,14 +29,14 @@ class GradientButton extends StatelessWidget {
         gradient: gradient ??
             LinearGradient(
               colors: <Color>[
-                hexToColor('#405FA3'),
-                hexToColor('#1ED69D'),
+                Color(0xff405FA3),
+                Color(0xff1ED69D),
               ],
             ),
         borderRadius: BorderRadius.circular(22.0),
         boxShadow: [
           BoxShadow(
-            color: hexToColor('#E5F5FF'),
+            color: Color(0xffE5F5FF),
             offset: Offset(0.0, 1.5),
             blurRadius: 1.5,
           ),

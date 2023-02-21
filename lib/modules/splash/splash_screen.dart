@@ -12,11 +12,12 @@ class SplashScreen extends StatelessWidget {
         children: [
           Icon(
             Icons.hourglass_bottom,
-            color: ColorConstants.darkGray,
-            size: 30.0,
+            color: Colors.purple,
+            size: 35.0,
           ),
+          const SizedBox(height: 15),
           Text(
-            'loading...',
+            'Đang tải ...',
             style: TextStyle(fontSize: 30.0),
           ),
         ],

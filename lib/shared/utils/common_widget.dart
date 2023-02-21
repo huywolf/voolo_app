@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:voolo_app/shared/constants/assets.dart';
 
 class CommonWidget {
   static AppBar appBar(BuildContext context, String title, IconData? backIcon, Color color, {void Function()? callback}) {
@@ -23,6 +25,21 @@ class CommonWidget {
       ),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
+    );
+  }
+
+  static AppBar vooloAppBar(BuildContext context) {
+    return AppBar(
+      leading: const SizedBox(),
+      centerTitle: true,
+      title: Image.asset(Assets.vooloIcon, height: 32),
+      backgroundColor: Colors.white,
+      elevation: 0.5,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.white,
+        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        statusBarBrightness: Brightness.light, // For iOS (dark icons)
+      ),
     );
   }
 

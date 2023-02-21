@@ -8,7 +8,7 @@ class SplashController extends GetxController {
   void onReady() async {
     super.onReady();
 
-    await Future.delayed(Duration(milliseconds: 2000));
+    await Future.delayed(Duration(milliseconds: 1000));
     // var storage = Get.find<SharedPreferences>();
     Get.toNamed(Routes.HOME);
     // try {
