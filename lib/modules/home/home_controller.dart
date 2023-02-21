@@ -15,23 +15,18 @@ class HomeController extends GetxController {
   var users = Rxn<UsersResponse>();
   var user = Rxn<Datum>();
 
-  late MainTab mainTab;
-  late DiscoverTab discoverTab;
-  late ResourceTab resourceTab;
-  late InboxTab inboxTab;
-  late MeTab meTab;
+  late HomeTab homeTab;
+  late NotificationTab notificationTab;
+  late ProfileTab profileTab;
 
   @override
   void onInit() async {
     super.onInit();
 
-    mainTab = MainTab();
+    homeTab = HomeTab();
     loadUsers();
-
-    discoverTab = DiscoverTab();
-    resourceTab = ResourceTab();
-    inboxTab = InboxTab();
-    meTab = MeTab();
+    notificationTab = NotificationTab();
+    profileTab = ProfileTab();
   }
 
   Future<void> loadUsers() async {
@@ -72,14 +67,10 @@ class HomeController extends GetxController {
     switch (tab) {
       case MainTabs.home:
         return 0;
-      case MainTabs.discover:
+      case MainTabs.notifcation:
         return 1;
-      case MainTabs.resource:
+      case MainTabs.profile:
         return 2;
-      case MainTabs.inbox:
-        return 3;
-      case MainTabs.me:
-        return 4;
       default:
         return 0;
     }
@@ -90,13 +81,9 @@ class HomeController extends GetxController {
       case 0:
         return MainTabs.home;
       case 1:
-        return MainTabs.discover;
+        return MainTabs.notifcation;
       case 2:
-        return MainTabs.resource;
-      case 3:
-        return MainTabs.inbox;
-      case 4:
-        return MainTabs.me;
+        return MainTabs.profile;
       default:
         return MainTabs.home;
     }

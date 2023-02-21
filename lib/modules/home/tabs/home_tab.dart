@@ -7,7 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class MainTab extends GetView<HomeController> {
+class HomeTab extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

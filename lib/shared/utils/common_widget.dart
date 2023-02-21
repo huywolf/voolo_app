@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CommonWidget {
-  static AppBar appBar(
-      BuildContext context, String title, IconData? backIcon, Color color,
-      {void Function()? callback}) {
+  static AppBar appBar(BuildContext context, String title, IconData? backIcon, Color color, {void Function()? callback}) {
     return AppBar(
       leading: backIcon == null
           ? null

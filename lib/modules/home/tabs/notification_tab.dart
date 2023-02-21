@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DiscoverTab extends StatelessWidget {
+class NotificationTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('discover'),
+      child: Text('Màn hình thông báo'),
     );
   }
 }

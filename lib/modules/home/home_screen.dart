@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/modules/home/home.dart';
-import 'package:voolo_app/modules/home/tabs/tabs.dart';
 import 'package:voolo_app/shared/shared.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -23,24 +22,16 @@ class HomeScreen extends GetView<HomeController> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           _buildNavigationBarItem(
-            "Home",
+            'home'.tr,
             MainTabs.home == controller.currentTab.value ? "icon_home_activited.svg" : "icon_home.svg",
           ),
           _buildNavigationBarItem(
-            "Discover",
-            MainTabs.discover == controller.currentTab.value ? "icon_discover_activited.svg" : "icon_discover.svg",
-          ),
-          _buildNavigationBarItem(
-            "Resource",
-            "icon_resource.svg",
-          ),
-          _buildNavigationBarItem(
-            "Inbox",
-            MainTabs.inbox == controller.currentTab.value ? "icon_inbox_activited.svg" : "icon_inbox.svg",
+            "notification".tr,
+            MainTabs.notifcation == controller.currentTab.value ? "icon_notification.svg" : "icon_notification.svg",
           ),
           _buildNavigationBarItem(
             "Me",
-            MainTabs.me == controller.currentTab.value ? "icon_me_activited.svg" : "icon_me.svg",
+            MainTabs.profile == controller.currentTab.value ? "icon_profile_activited.svg" : "icon_profile.svg",
           )
         ],
         type: BottomNavigationBarType.fixed,
@@ -59,23 +50,22 @@ class HomeScreen extends GetView<HomeController> {
   Widget _buildContent(MainTabs tab) {
     switch (tab) {
       case MainTabs.home:
-        return controller.mainTab;
-      case MainTabs.discover:
-        return controller.discoverTab;
-      case MainTabs.resource:
-        return controller.resourceTab;
-      case MainTabs.inbox:
-        return controller.inboxTab;
-      case MainTabs.me:
-        return controller.meTab;
+        return controller.homeTab;
+      case MainTabs.notifcation:
+        return controller.notificationTab;
+      case MainTabs.profile:
+        return controller.profileTab;
       default:
-        return controller.mainTab;
+        return controller.homeTab;
     }
   }
 
   BottomNavigationBarItem _buildNavigationBarItem(String label, String svg) {
     return BottomNavigationBarItem(
-      icon: SvgPicture.asset('assets/svgs/$svg'),
+      icon: SvgPicture.asset(
+        'assets/svgs/$svg',
+        width: 20,
+      ),
       label: label,
     );
   }

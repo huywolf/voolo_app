@@ -5,7 +5,7 @@ import 'package:voolo_app/routes/routes.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 
-class MeTab extends GetView<HomeController> {
+class ProfileTab extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Stack(
