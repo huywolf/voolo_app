@@ -1,109 +1,113 @@
+import 'dart:io' show Platform;
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:voolo_app/modules/auth/auth.dart';
+import 'package:voolo_app/shared/constants/assets.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
+import 'package:voolo_app/shared/widgets/buttons/app_elevated_button.dart';
+import 'package:voolo_app/shared/widgets/input/default_textfield.dart';
 
-class RegisterScreen extends StatelessWidget {
-  final AuthController controller = Get.arguments;
+import 'widgets/blurry_container.dart';
 
+class RegisterScreen extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GradientBackground(),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: CommonWidget.appBar(
-            context,
-            'Sign Up',
-            Icons.arrow_back,
-            Colors.white,
-          ),
-          body: Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: 35.0),
-            child: _buildForms(context),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildForms(BuildContext context) {
-    return Form(
-      key: controller.registerFormKey,
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(color: Color(0xFFF3F3F3)),
+        child: Stack(
+          alignment: Alignment.topCenter,
           children: [
-            InputField(
-              controller: controller.registerEmailController,
-              keyboardType: TextInputType.text,
-              labelText: 'Email address',
-              placeholder: 'Enter Email Address',
-              validator: (value) {
-                if (!Regex.isEmail(value!)) {
-                  return 'Email format error.';
-                }
-
-                if (value.isEmpty) {
-                  return 'Email is required.';
-                }
-                return null;
-              },
+            BlurryContainer(),
+            Positioned(
+              top: -40,
+              right: 0,
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),
+                child: Image.asset(Assets.partVooloLogo, height: SizeConfig().screenHeight * 0.2),
+              ),
             ),
-            CommonWidget.rowHeight(),
-            InputField(
-              controller: controller.registerPasswordController,
-              keyboardType: TextInputType.emailAddress,
-              labelText: 'Password',
-              placeholder: 'Enter Password',
-              password: true,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Password is required.';
-                }
-
-                if (value.length < 6 || value.length > 15) {
-                  return 'Password should be 6~15 characters';
-                }
-
-                return null;
-              },
+            Positioned(
+              top: SizeConfig().screenHeight * 0.4,
+              left: 3,
+              child: Image.asset(Assets.blurryVooloLogo, height: 150),
             ),
-            CommonWidget.rowHeight(),
-            InputField(
-              controller: controller.registerConfirmPasswordController,
-              keyboardType: TextInputType.emailAddress,
-              labelText: 'Confirm Password',
-              placeholder: 'Enter Password',
-              password: true,
-              validator: (value) {
-                if (controller.registerPasswordController.text != controller.registerConfirmPasswordController.text) {
-                  return 'Confirm Password is not consistence with Password.';
-                }
-
-                if (value!.isEmpty) {
-                  return 'Confirm Password is required.';
-                }
-                return null;
-              },
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: SizeConfig().screenHeight * 0.2 - 30),
+                  Text(
+                    "Đăng ký",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
+                  ),
+                  const SizedBox(height: 50),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 45),
+                    child: Column(
+                      children: [
+                        DefaultTextField(
+                          onChanged: (value) {},
+                          labelText: "Họ và tên",
+                        ),
+                        const SizedBox(height: 20),
+                        DefaultTextField(
+                          onChanged: (value) {},
+                          labelText: "Số điện thoại",
+                        ),
+                        const SizedBox(height: 20),
+                        DefaultTextField(
+                          onChanged: (value) {},
+                          labelText: "Email",
+                        ),
+                        const SizedBox(height: 60),
+                        SizedBox(
+                          width: 250,
+                          child: AppElevatedButton(
+                            onPressed: () async {},
+                            buttonHeight: 40,
+                            radius: 30,
+                            text: "Đăng ký",
+                            buttonBgColor: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 100),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Bạn đã có tài khoản?  ",
+                              style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
+                            ),
+                            InkWell(
+                              onTap: () => Get.back(),
+                              child: Text(
+                                "Đăng nhập",
+                                style: TextStyle(
+                                  color: Color(0xff197DDE),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 30),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-            CommonWidget.rowHeight(height: 10.0),
-            AppCheckbox(
-              label: 'I have read and agreed to the Terms & Conditions and Privay Policy of Demo.',
-              checked: controller.registerTermsChecked,
-              onChecked: (val) {
-                controller.registerTermsChecked = val!;
-              },
-            ),
-            CommonWidget.rowHeight(height: 80),
-            BorderButton(
-              text: 'Sign Up',
-              backgroundColor: Colors.white,
-              onPressed: () {
-                controller.register(context);
-              },
+            Positioned(
+              top: 25,
+              left: 25,
+              child: InkWell(
+                onTap: () => Get.back(),
+                child: Icon(Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back, size: 20),
+              ),
             ),
           ],
         ),

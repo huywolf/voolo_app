@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:voolo_app/shared/shared.dart';
 
 class ThemeConfig {
@@ -35,9 +36,6 @@ class ThemeConfig {
       ),
       backgroundColor: background,
       primaryColor: accentColor,
-      // textSelectionColor: accentColor,
-      // textSelectionHandleColor: accentColor,
-      // cursorColor: accentColor,
       textSelectionTheme: TextSelectionThemeData(
         selectionColor: accentColor,
         selectionHandleColor: accentColor,
@@ -45,7 +43,6 @@ class ThemeConfig {
       ),
       toggleableActiveColor: accentColor,
       appBarTheme: AppBarTheme(
-        brightness: brightness,
         color: cardBackground,
         iconTheme: IconThemeData(
           color: secondaryText,
@@ -103,75 +100,9 @@ class ThemeConfig {
           fontWeight: FontWeight.w300,
         ),
       ),
-      fontFamily: 'Rubik',
       unselectedWidgetColor: Color(0xffDADCDD),
-      textTheme: TextTheme(
-        headline1: baseTextTheme.headline1!.copyWith(
-          color: primaryText,
-          fontSize: 34.0,
-          fontWeight: FontWeight.bold,
-        ),
-        headline2: baseTextTheme.headline2!.copyWith(
-          color: primaryText,
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-        ),
-        headline3: baseTextTheme.headline3!.copyWith(
-          color: secondaryText,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),
-        headline4: baseTextTheme.headline4!.copyWith(
-          color: primaryText,
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-        ),
-        headline5: baseTextTheme.headline5!.copyWith(
-          color: primaryText,
-          fontSize: 16,
-          fontWeight: FontWeight.w700,
-        ),
-        headline6: baseTextTheme.headline6!.copyWith(
-          color: primaryText,
-          fontSize: 14,
-          fontWeight: FontWeight.w700,
-        ),
-        bodyText1: baseTextTheme.bodyText1!.copyWith(
-          color: secondaryText,
-          fontSize: 15,
-        ),
-        bodyText2: baseTextTheme.bodyText2!.copyWith(
-          color: primaryText,
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-        ),
-        button: baseTextTheme.button!.copyWith(
-          color: primaryText,
-          fontSize: 12.0,
-          fontWeight: FontWeight.w700,
-        ),
-        caption: baseTextTheme.caption!.copyWith(
-          color: primaryText,
-          fontSize: 11.0,
-          fontWeight: FontWeight.w300,
-        ),
-        overline: baseTextTheme.overline!.copyWith(
-          color: secondaryText,
-          fontSize: 11.0,
-          fontWeight: FontWeight.w500,
-        ),
-        subtitle1: baseTextTheme.subtitle1!.copyWith(
-          color: primaryText,
-          fontSize: 16.0,
-          fontWeight: FontWeight.w700,
-        ),
-        subtitle2: baseTextTheme.subtitle2!.copyWith(
-          color: secondaryText,
-          fontSize: 11.0,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor),
+      textTheme: GoogleFonts.montserratAlternatesTextTheme(),
     );
   }
 
@@ -180,7 +111,7 @@ class ThemeConfig {
         background: ColorConstants.lightScaffoldBackgroundColor,
         cardBackground: ColorConstants.secondaryAppColor,
         primaryText: Colors.black,
-        secondaryText: Colors.white,
+        secondaryText: Colors.black,
         accentColor: ColorConstants.secondaryAppColor,
         divider: ColorConstants.secondaryAppColor,
         buttonBackground: Colors.black38,

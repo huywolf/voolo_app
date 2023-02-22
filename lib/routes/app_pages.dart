@@ -18,7 +18,7 @@ class AppPages {
       page: () => AuthScreen(),
       binding: AuthBinding(),
       children: [
-        GetPage(name: Routes.REGISTER, page: () => RegisterScreen()),
+        GetPage(name: Routes.REGISTER, page: () => RegisterScreen(), transition: Transition.rightToLeft),
         GetPage(name: Routes.LOGIN, page: () => LoginScreen()),
       ],
     ),

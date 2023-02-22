@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared.dart';
+import '../../shared.dart';
 
 class BorderButton extends StatelessWidget {
   final _GradientPainter _painter;

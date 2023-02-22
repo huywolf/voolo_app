@@ -34,7 +34,7 @@ class CommonWidget {
       centerTitle: true,
       title: Image.asset(Assets.vooloIcon, height: 32),
       backgroundColor: Colors.white,
-      elevation: 0.5,
+      elevation: 1,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.white,
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 
@@ -30,6 +31,7 @@ class App extends StatelessWidget {
       smartManagement: SmartManagement.keepFactory,
       title: 'Voolo App',
       theme: ThemeConfig.lightTheme,
+      darkTheme: ThemeConfig.lightTheme,
       locale: TranslationService.locale,
       fallbackLocale: TranslationService.fallbackLocale,
       translations: TranslationService(),

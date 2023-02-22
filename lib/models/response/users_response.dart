@@ -21,8 +21,7 @@ class UsersResponse {
   List<Datum>? data;
   Support? support;
 
-  factory UsersResponse.fromRawJson(String str) =>
-      UsersResponse.fromJson(json.decode(str));
+  factory UsersResponse.fromRawJson(String str) => UsersResponse.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
