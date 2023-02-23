@@ -79,11 +79,11 @@ class AuthController extends GetxController {
   void onClose() {
     super.onClose();
 
-    registerEmailController.dispose();
-    registerPasswordController.dispose();
-    registerConfirmPasswordController.dispose();
+    // registerEmailController.dispose();
+    // registerPasswordController.dispose();
+    // registerConfirmPasswordController.dispose();
 
-    loginPhoneEmailController.dispose();
-    loginPasswordController.dispose();
+    // loginPhoneEmailController.dispose();
+    // loginPasswordController.dispose();
   }
 }

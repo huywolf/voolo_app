@@ -20,7 +20,7 @@ class HomeScreen extends GetView<HomeController> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           _buildNavigationBarItem('home'.tr, Icons.home, MainTabs.home),
-          _buildNavigationBarItem("notification".tr, Icons.notifications_none_rounded, MainTabs.notifcation),
+          _buildNavigationBarItem("history".tr, Icons.history, MainTabs.notifcation),
           _buildNavigationBarItem("profile".tr, Icons.account_circle_outlined, MainTabs.profile)
         ],
         type: BottomNavigationBarType.fixed,

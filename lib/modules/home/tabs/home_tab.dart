@@ -18,15 +18,11 @@ class HomeTab extends GetView<HomeController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
-                Text(
-                  'Vui lòng nhập số điện thoại',
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w600),
-                ),
-                const SizedBox(height: 20),
                 AppElevatedButton(
                   onPressed: () async {},
                   radius: Dimension.kButtonRadius,
-                  text: "Đăng ký",
+                  text: "Đăng ký BNPL",
+                  buttonBgColor: Colors.black,
                 ),
               ],
             ),

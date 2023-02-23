@@ -1,12 +1,12 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 
 import 'app_binding.dart';
 import 'di.dart';
-import 'lang/lang.dart';
+import 'lang/translation_service.dart';
 import 'routes/routes.dart';
 import 'theme/theme.dart';
 
@@ -14,7 +14,12 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DenpendencyInjection.init();
 
-  runApp(App());
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) => App(), // Wrap your app
+    ),
+  );
   configLoading();
 }
 
