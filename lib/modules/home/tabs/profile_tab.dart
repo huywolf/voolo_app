@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:voolo_app/shared/widgets/buttons/app_elevated_button.dart';
 
 class ProfileTab extends GetView<HomeController> {
+  const ProfileTab({super.key});
+
   void showUpdateLanguage() {
     Get.defaultDialog(
         title: "update_locale".tr,

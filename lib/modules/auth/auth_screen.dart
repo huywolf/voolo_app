@@ -22,11 +22,11 @@ class AuthScreen extends GetView<AuthController> {
         },
         child: SafeArea(
           child: Container(
-            decoration: BoxDecoration(color: Color(0xFFF3F3F3)),
+            decoration: const BoxDecoration(color: Color(0xFFF3F3F3)),
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                BlurryContainer(),
+                const BlurryContainer(),
                 Positioned(
                   top: -40,
                   right: 0,
@@ -39,12 +39,12 @@ class AuthScreen extends GetView<AuthController> {
                   child: Column(
                     children: [
                       SizedBox(height: SizeConfig().screenHeight * 0.2 - 30),
-                      Text(
+                      const Text(
                         "Xin chào",
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48, fontFamily: "Roboto"),
                       ),
                       const SizedBox(height: 5),
-                      Text(
+                      const Text(
                         "Đăng nhập để khám phá nhé!",
                         style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
                       ),
@@ -80,7 +80,7 @@ class AuthScreen extends GetView<AuthController> {
                               const SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
+                                children: const [
                                   Text(
                                     "Quên mật khẩu?",
                                     style: TextStyle(color: Color(0xff197DDE), fontSize: 13, fontWeight: FontWeight.w400),
@@ -100,17 +100,17 @@ class AuthScreen extends GetView<AuthController> {
                                   buttonBgColor: Colors.black,
                                 ),
                               ),
-                              const SizedBox(height: 100),
+                              const SizedBox(height: 50),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Bạn chưa có tài khoản?  ",
                                     style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
                                   ),
                                   InkWell(
                                     onTap: () => Get.toNamed(Routes.AUTH + Routes.REGISTER, arguments: controller),
-                                    child: Text(
+                                    child: const Text(
                                       "Đăng ký ngay",
                                       style: TextStyle(
                                         color: Color(0xff197DDE),

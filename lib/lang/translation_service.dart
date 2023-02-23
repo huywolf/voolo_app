@@ -6,7 +6,7 @@ import 'vi_VN.dart';
 
 class TranslationService extends Translations {
   // static Locale? get locale => Get.deviceLocale;
-  static Locale? get locale => Locale('vi', 'VN');
+  static Locale? get locale => const Locale('vi', 'VN');
   static final fallbackLocale = Locale('vi', 'VN');
   @override
   Map<String, Map<String, String>> get keys => {

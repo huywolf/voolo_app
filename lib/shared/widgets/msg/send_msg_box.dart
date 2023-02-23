@@ -7,9 +7,7 @@ import 'msg_box.dart';
 class SendMsgBox extends MsgBox {
   final String message;
   final AnimationController animationController;
-  const SendMsgBox(
-      {Key? key, required this.message, required this.animationController})
-      : super(key: key, animationController: animationController);
+  const SendMsgBox({Key? key, required this.message, required this.animationController}) : super(key: key, animationController: animationController);
 
   @override
   Widget buildWidgets(BuildContext context) {
@@ -20,8 +18,8 @@ class SendMsgBox extends MsgBox {
         children: [
           Flexible(
             child: Container(
-              padding: EdgeInsets.all(14),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(14),
+              decoration: const BoxDecoration(
                 color: Color(0XFF98E165),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(18),
@@ -31,12 +29,12 @@ class SendMsgBox extends MsgBox {
               ),
               child: Text(
                 message,
-                style: TextStyle(color: Colors.black, fontSize: 14),
+                style: const TextStyle(color: Colors.black, fontSize: 14),
               ),
             ),
           ),
-          CustomPaint(painter: MsgArrowPainter(Color(0XFF98E165))),
-          SizedBox(width: 10),
+          CustomPaint(painter: MsgArrowPainter(const Color(0XFF98E165))),
+          const SizedBox(width: 10),
           CachedNetworkImage(
             width: 46,
             height: 46,

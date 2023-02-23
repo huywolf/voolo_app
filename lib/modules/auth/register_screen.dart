@@ -80,7 +80,7 @@ class RegisterScreen extends GetView<AuthController> {
                             buttonBgColor: Colors.black,
                           ),
                         ),
-                        const SizedBox(height: 100),
+                        const SizedBox(height: 50),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

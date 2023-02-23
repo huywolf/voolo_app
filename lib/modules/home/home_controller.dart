@@ -23,10 +23,10 @@ class HomeController extends GetxController {
   void onInit() async {
     super.onInit();
 
-    homeTab = HomeTab();
+    homeTab = const HomeTab();
     // loadUsers();
     notificationTab = NotificationTab();
-    profileTab = ProfileTab();
+    profileTab = const ProfileTab();
   }
 
   Future<void> loadUsers() async {
@@ -47,7 +47,7 @@ class HomeController extends GetxController {
   }
 
   void _saveUserInfo(UsersResponse users) {
-    var random = new Random();
+    var random = Random();
     var index = random.nextInt(users.data!.length);
     user.value = users.data![index];
     var prefs = Get.find<SharedPreferences>();

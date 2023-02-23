@@ -1,7 +1,9 @@
 import 'package:voolo_app/modules/auth/auth.dart';
 import 'package:voolo_app/modules/home/home.dart';
-import 'package:voolo_app/modules/modules.dart';
 import 'package:get/get.dart';
+
+import '../modules/splash/splash.dart';
+import '../modules/verify_bnpl/verify_bnpl.dart';
 
 part 'app_routes.dart';
 
@@ -23,9 +25,13 @@ class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page: () => HomeScreen(),
+      page: () => const HomeScreen(),
       binding: HomeBinding(),
-      children: [],
+    ),
+    GetPage(
+      name: Routes.VERIFY_BNPL,
+      page: () => const VerifyBnplScreen(),
+      binding: VerifyBnplBinding(),
     ),
   ];
 }

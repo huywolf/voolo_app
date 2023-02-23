@@ -20,8 +20,6 @@ class AuthController extends GetxController {
   final loginPhoneEmailController = TextEditingController();
   final loginPasswordController = TextEditingController();
 
-  bool enableLoginButton = false;
-
   @override
   void onInit() {
     super.onInit();

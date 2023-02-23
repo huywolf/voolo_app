@@ -100,7 +100,7 @@ class ThemeConfig {
           fontWeight: FontWeight.w300,
         ),
       ),
-      unselectedWidgetColor: Color(0xffDADCDD),
+      unselectedWidgetColor: const Color(0xffDADCDD),
       colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accentColor),
       textTheme: GoogleFonts.montserratAlternatesTextTheme(),
     );
