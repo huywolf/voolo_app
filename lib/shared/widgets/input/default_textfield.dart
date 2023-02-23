@@ -7,24 +7,18 @@ class DefaultTextField extends StatefulWidget {
   const DefaultTextField({
     Key? key,
     this.labelText,
-    this.hintText,
     this.errorText,
+    this.hintText,
     this.keyboardType,
     this.obscureText = false,
     this.controller,
-    this.maxLength,
-    this.maxLines,
-    required this.onChanged,
-    this.validateSuccess,
-    this.isFocused,
-    this.onTap,
     this.readOnly,
     this.inputFormatters,
-    this.scrollPadding,
     this.enable,
     this.autoFocus,
     this.showClearIcon,
     this.fillColor,
+    this.validator,
   }) : super(key: key);
 
   final String? labelText;
@@ -33,19 +27,13 @@ class DefaultTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
   final TextEditingController? controller;
-  final int? maxLength;
-  final int? maxLines;
-  final ValueChanged<String> onChanged;
-  final bool? validateSuccess;
-  final bool? isFocused;
-  final VoidCallback? onTap;
   final bool? readOnly;
   final List<TextInputFormatter>? inputFormatters;
-  final EdgeInsets? scrollPadding;
   final bool? enable;
   final bool? autoFocus;
   final bool? showClearIcon;
   final Color? fillColor;
+  final String? Function(String?)? validator;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -53,7 +41,6 @@ class DefaultTextField extends StatefulWidget {
 
 class _DefaultTextFieldState extends State<DefaultTextField> {
   bool? obscureText;
-  final double kIconPadding = 16;
 
   @override
   void initState() {
@@ -63,13 +50,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
 
   OutlineInputBorder _buildOutlineInputBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(
-        color: widget.errorText != null
-            ? ColorConstants.redError
-            : widget.isFocused == true
-                ? ColorConstants.primary
-                : ColorConstants.greyBoder,
-      ),
+      borderSide: BorderSide(color: ColorConstants.greyBoder),
       borderRadius: BorderRadius.circular(40),
     );
   }
@@ -85,39 +66,24 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
         ),
         const SizedBox(height: 6),
         TextFormField(
-          inputFormatters: widget.inputFormatters,
-          enabled: widget.enable,
-          autofocus: widget.autoFocus ?? false,
-          onTap: widget.onTap,
-          onChanged: (value) {
-            widget.onChanged.call(value);
-          },
-          scrollPadding: widget.scrollPadding ?? const EdgeInsets.all(20.0),
-          controller: widget.controller,
-          obscureText: obscureText ?? false,
-          readOnly: widget.readOnly ?? false,
-          maxLength: widget.maxLength,
-          maxLines: widget.maxLines ?? 1,
-          keyboardType: widget.keyboardType,
-          cursorColor: Colors.black,
-          style: AppTextStyles.normalBold,
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(15),
             filled: true,
             fillColor: Colors.white,
-            errorMaxLines: 3,
+            contentPadding: EdgeInsets.symmetric(horizontal: 20),
             border: _buildOutlineInputBorder(),
             focusedBorder: _buildOutlineInputBorder(),
             enabledBorder: _buildOutlineInputBorder(),
             focusedErrorBorder: _buildOutlineInputBorder(),
-            errorBorder: _buildOutlineInputBorder(),
+            floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: widget.hintText,
-            errorText: widget.errorText,
             hintStyle: AppTextStyles.small.copyWith(color: ColorConstants.greyText),
-            labelStyle: AppTextStyles.small.copyWith(color: ColorConstants.greyText),
-            errorStyle: AppTextStyles.small.copyWith(color: Colors.red),
-            suffixIconConstraints: BoxConstraints(minHeight: kIconPadding, minWidth: kIconPadding),
           ),
+          cursorColor: Colors.black,
+          controller: widget.controller,
+          style: AppTextStyles.normalBold,
+          obscureText: obscureText ?? false,
+          autocorrect: false,
+          validator: widget.validator,
         ),
       ],
     );

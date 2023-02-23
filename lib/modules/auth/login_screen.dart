@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             InputField(
-              controller: controller.loginEmailController,
+              controller: controller.loginPhoneEmailController,
               keyboardType: TextInputType.text,
               labelText: 'Email address',
               placeholder: 'Enter Email Address',

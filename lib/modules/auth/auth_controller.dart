@@ -17,8 +17,10 @@ class AuthController extends GetxController {
   bool registerTermsChecked = false;
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
-  final loginEmailController = TextEditingController();
+  final loginPhoneEmailController = TextEditingController();
   final loginPasswordController = TextEditingController();
+
+  bool enableLoginButton = false;
 
   @override
   void onInit() {
@@ -56,18 +58,20 @@ class AuthController extends GetxController {
   void login(BuildContext context) async {
     AppFocus.unfocus(context);
     if (loginFormKey.currentState!.validate()) {
-      final res = await apiRepository.login(
-        LoginRequest(
-          email: loginEmailController.text,
-          password: loginPasswordController.text,
-        ),
-      );
+      // final res = await apiRepository.login(
+      //   LoginRequest(
+      //     email: loginPhoneEmailController.text,
+      //     password: loginPasswordController.text,
+      //   ),
+      // );
 
       final prefs = Get.find<SharedPreferences>();
-      if (res!.token.isNotEmpty) {
-        prefs.setString(StorageConstants.token, res.token);
-        Get.toNamed(Routes.HOME);
-      }
+      prefs.setString(StorageConstants.phoneNumber, loginPhoneEmailController.text);
+      Get.toNamed(Routes.HOME);
+      // if (res!.token.isNotEmpty) {
+      //   prefs.setString(StorageConstants.token, res.token);
+      //   Get.toNamed(Routes.HOME);
+      // }
     }
   }
 
@@ -79,7 +83,7 @@ class AuthController extends GetxController {
     registerPasswordController.dispose();
     registerConfirmPasswordController.dispose();
 
-    loginEmailController.dispose();
+    loginPhoneEmailController.dispose();
     loginPasswordController.dispose();
   }
 }

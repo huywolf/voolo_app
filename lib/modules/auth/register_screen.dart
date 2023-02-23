@@ -48,17 +48,25 @@ class RegisterScreen extends GetView<AuthController> {
                     child: Column(
                       children: [
                         DefaultTextField(
-                          onChanged: (value) {},
                           labelText: "Họ và tên",
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Password is required.';
+                            }
+
+                            if (value.length < 6 || value.length > 15) {
+                              return 'Password should be 6~15 characters';
+                            }
+
+                            return null;
+                          },
                         ),
                         const SizedBox(height: 20),
                         DefaultTextField(
-                          onChanged: (value) {},
                           labelText: "Số điện thoại",
                         ),
                         const SizedBox(height: 20),
                         DefaultTextField(
-                          onChanged: (value) {},
                           labelText: "Email",
                         ),
                         const SizedBox(height: 60),

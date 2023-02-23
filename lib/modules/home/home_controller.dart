@@ -51,7 +51,7 @@ class HomeController extends GetxController {
     var index = random.nextInt(users.data!.length);
     user.value = users.data![index];
     var prefs = Get.find<SharedPreferences>();
-    prefs.setString(StorageConstants.userInfo, users.data![index].toRawJson());
+    // prefs.setString(StorageConstants.userInfo, users.data![index].toRawJson());
 
     // var userInfo = prefs.getString(StorageConstants.userInfo);
     // var userInfoObj = Datum.fromRawJson(xx!);

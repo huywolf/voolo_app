@@ -15,6 +15,7 @@ class ApiRepository {
     if (res.statusCode == 200) {
       return LoginResponse.fromJson(res.body);
     }
+    return null;
   }
 
   Future<RegisterResponse?> register(RegisterRequest data) async {
@@ -22,6 +23,7 @@ class ApiRepository {
     if (res.statusCode == 200) {
       return RegisterResponse.fromJson(res.body);
     }
+    return null;
   }
 
   Future<UsersResponse?> getUsers() async {
@@ -29,5 +31,6 @@ class ApiRepository {
     if (res.statusCode == 200) {
       return UsersResponse.fromJson(res.body);
     }
+    return null;
   }
 }
