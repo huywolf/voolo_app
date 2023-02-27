@@ -1,4 +1,6 @@
 class StorageConstants {
-  static final String token = 'token';
-  static final String phoneNumber = 'phoneNumber';
+  StorageConstants._();
+
+  static const String accessToken = 'accessToken';
+  static const String phoneNumber = 'phoneNumber';
 }

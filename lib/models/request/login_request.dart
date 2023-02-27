@@ -9,8 +9,7 @@ class LoginRequest {
   String email;
   String password;
 
-  factory LoginRequest.fromRawJson(String str) =>
-      LoginRequest.fromJson(json.decode(str));
+  factory LoginRequest.fromRawJson(String str) => LoginRequest.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 

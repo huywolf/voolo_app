@@ -23,12 +23,12 @@ class HomeScreen extends GetView<HomeController> {
         items: [
           _buildNavigationBarItem('home'.tr, Icons.home, MainTabs.home),
           _buildNavigationBarItem("history".tr, Icons.history, MainTabs.notifcation),
-          _buildNavigationBarItem("profile".tr, Icons.account_circle_outlined, MainTabs.profile)
+          _buildNavigationBarItem("account".tr, Icons.account_circle_outlined, MainTabs.account)
         ],
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: ColorConstants.black,
         selectedItemColor: ColorConstants.black,
-        selectedLabelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        selectedLabelStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
         currentIndex: controller.getCurrentIndex(controller.currentTab.value),
         onTap: (index) => controller.switchTab(index),
       ),
@@ -40,9 +40,9 @@ class HomeScreen extends GetView<HomeController> {
       case MainTabs.home:
         return controller.homeTab;
       case MainTabs.notifcation:
-        return controller.notificationTab;
-      case MainTabs.profile:
-        return controller.profileTab;
+        return controller.historyTab;
+      case MainTabs.account:
+        return controller.accountTab;
       default:
         return controller.homeTab;
     }

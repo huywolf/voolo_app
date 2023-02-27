@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/shared/constants/constants.dart';
 
-class ProfileItem extends StatelessWidget {
-  const ProfileItem({
+class AccountItem extends StatelessWidget {
+  const AccountItem({
     Key? key,
     required this.onTap,
     required this.title,
@@ -16,14 +16,14 @@ class ProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Material(
         borderRadius: BorderRadius.circular(11),
         child: InkWell(
           onTap: onTap,
           customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
           child: Padding(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Row(
               children: [
                 icon,
@@ -31,9 +31,9 @@ class ProfileItem extends StatelessWidget {
                 Expanded(
                     child: Text(
                   title,
-                  style: TextStyle(color: ColorConstants.blackText, fontSize: 16),
+                  style: const TextStyle(color: ColorConstants.blackText, fontSize: 16),
                 )),
-                Icon(
+                const Icon(
                   Icons.chevron_right,
                   color: ColorConstants.darkGray,
                 ),

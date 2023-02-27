@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/modules/home/home.dart';
+import 'package:voolo_app/routes/routes.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:voolo_app/shared/widgets/buttons/app_elevated_button.dart';
 
-class ProfileTab extends GetView<HomeController> {
-  const ProfileTab({super.key});
+class AccountTab extends GetView<HomeController> {
+  const AccountTab({super.key});
 
   void showUpdateLanguage() {
     Get.defaultDialog(
         title: "update_locale".tr,
-        titleStyle: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+        titleStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         cancelTextColor: Colors.black,
         confirmTextColor: Colors.white,
         barrierDismissible: true,
         radius: 12,
-        titlePadding: EdgeInsets.only(top: 20),
-        contentPadding: EdgeInsets.all(20),
+        titlePadding: const EdgeInsets.only(top: 20),
+        contentPadding: const EdgeInsets.all(20),
         content: Column(
           children: [
             AppElevatedButton(
@@ -52,7 +53,7 @@ class ProfileTab extends GetView<HomeController> {
 
   Widget _buildListItems() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: ColorConstants.white,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20),
@@ -62,14 +63,19 @@ class ProfileTab extends GetView<HomeController> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
-            ProfileItem(
-              icon: Icon(Icons.language, size: 25),
+            const SizedBox(height: 20),
+            AccountItem(
+              icon: const Icon(Icons.person, size: 25),
+              title: "voolo_account".tr,
+              onTap: () => Get.toNamed(Routes.VERIFY_BNPL),
+            ),
+            AccountItem(
+              icon: const Icon(Icons.language, size: 25),
               title: "update_locale".tr,
               onTap: showUpdateLanguage,
             ),
-            ProfileItem(
-              icon: Icon(Icons.logout, size: 25),
+            AccountItem(
+              icon: const Icon(Icons.logout, size: 25),
               title: "logout".tr,
               onTap: () {
                 controller.signout();

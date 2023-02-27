@@ -42,10 +42,10 @@ flutter pub get
 ```
 
 **Step 3:**
-- Generate file, include app name, app icon
+- Generate files, include app icon
 ```
-flutter pub run flutter_app_name
 flutter pub run flutter_launcher_icons
+flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 
 **Step 4:**

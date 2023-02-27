@@ -32,6 +32,7 @@ class AppPages {
       name: Routes.VERIFY_BNPL,
       page: () => const VerifyBnplScreen(),
       binding: VerifyBnplBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

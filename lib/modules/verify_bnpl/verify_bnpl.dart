@@ -1,3 +1,2 @@
-export 'verify_bnpl_binding.dart';
-export 'verify_bnpl_controller.dart';
-export 'verify_bnpl_screen.dart';
+export 'binding/verify_bnpl_binding.dart';
+export 'view/verify_bnpl_screen.dart';

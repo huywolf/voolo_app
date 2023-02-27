@@ -28,14 +28,17 @@ class CommonWidget {
     );
   }
 
-  static AppBar vooloAppBar(BuildContext context) {
+  static AppBar vooloAppBar(
+    BuildContext context, {
+    bool showBackButton = false,
+  }) {
     return AppBar(
-      leading: const SizedBox(),
+      leading: showBackButton ? null : const SizedBox(),
       centerTitle: true,
       title: Image.asset(Assets.vooloIcon, height: 32),
       backgroundColor: Colors.white,
       elevation: 1,
-      systemOverlayStyle: SystemUiOverlayStyle(
+      systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.white,
         statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
         statusBarBrightness: Brightness.light, // For iOS (dark icons)

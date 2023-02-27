@@ -10,7 +10,6 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        GradientBackground(),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: CommonWidget.appBar(
