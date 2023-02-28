@@ -53,8 +53,8 @@ void configLoading() {
     ..radius = 10.0
     // ..progressColor = Colors.yellow
     ..backgroundColor = ColorConstants.lightGray
-    ..indicatorColor = const Color(0xff9161B8)
-    ..textColor = const Color(0xff9161B8)
+    ..indicatorColor = ColorConstants.primary
+    ..textColor = ColorConstants.primary
     // ..maskColor = Colors.red
     ..userInteractions = false
     ..dismissOnTap = false

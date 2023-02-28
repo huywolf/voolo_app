@@ -10,7 +10,8 @@ class InputField extends StatelessWidget {
   final bool password;
   final String? Function(String?)? validator;
 
-  InputField({
+  const InputField({
+    super.key,
     required this.controller,
     this.keyboardType = TextInputType.text,
     this.labelText = '',
@@ -28,33 +29,29 @@ class InputField extends StatelessWidget {
         fillColor: Colors.transparent,
         contentPadding: EdgeInsets.symmetric(vertical: 10.0),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: this.color,
-          ),
+          borderSide: BorderSide(color: color),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: this.color,
-          ),
+          borderSide: BorderSide(color: color),
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        labelText: this.labelText,
+        labelText: labelText,
         labelStyle: TextStyle(fontSize: fontSize - 2, color: color, height: 0.2, fontWeight: FontWeight.normal),
-        hintText: this.placeholder,
+        hintText: placeholder,
         hintStyle: TextStyle(fontSize: fontSize, color: color, fontWeight: FontWeight.normal),
         filled: true,
         isDense: true,
       ),
-      controller: this.controller,
+      controller: controller,
       style: TextStyle(
         color: color,
         fontSize: fontSize,
         fontWeight: FontWeight.normal,
       ),
-      keyboardType: this.keyboardType,
-      obscureText: this.password,
+      keyboardType: keyboardType,
+      obscureText: password,
       autocorrect: false,
-      validator: this.validator,
+      validator: validator,
     );
   }
 }

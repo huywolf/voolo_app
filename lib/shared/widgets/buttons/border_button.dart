@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../shared.dart';
-
 class BorderButton extends StatelessWidget {
   final _GradientPainter _painter;
   final String _text;
@@ -18,21 +16,21 @@ class BorderButton extends StatelessWidget {
     Widget? child,
     VoidCallback? onPressed,
     this.backgroundColor = Colors.transparent,
-  })  : this._painter = _GradientPainter(
+  })  : _painter = _GradientPainter(
           strokeWidth: strokeWidth,
           radius: radius,
           gradient: gradient ??
-              LinearGradient(
+              const LinearGradient(
                 colors: [
                   Color(0xff405FA3),
                   Color(0xff1ED69D),
                 ],
               ),
         ),
-        this._child = child,
-        this._callback = onPressed,
-        this._radius = radius,
-        this._text = text;
+        _child = child,
+        _callback = onPressed,
+        _radius = radius,
+        _text = text;
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +43,8 @@ class BorderButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(_radius),
           onTap: _callback,
           child: Container(
-            decoration: BoxDecoration(color: this.backgroundColor, borderRadius: BorderRadius.circular(this._radius)),
-            constraints: BoxConstraints(minWidth: 88, minHeight: 64),
+            decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(_radius)),
+            constraints: const BoxConstraints(minWidth: 88, minHeight: 64),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +52,7 @@ class BorderButton extends StatelessWidget {
                 if (_text != "")
                   Text(
                     _text,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xff2F9AA0),

@@ -40,21 +40,21 @@ class SendMsgBox extends MsgBox {
             height: 46,
             fit: BoxFit.fill,
             imageUrl: 'https://reqres.in/img/faces/1-image.jpg',
-            placeholder: (context, url) => Image(
+            placeholder: (context, url) => const Image(
               image: AssetImage('assets/images/icon_success.png'),
             ),
-            errorWidget: (context, url, error) => Icon(Icons.error),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ],
       ),
     );
 
     return Padding(
-      padding: EdgeInsets.only(right: 10.0, left: 50, top: 15, bottom: 5),
+      padding: const EdgeInsets.only(right: 10.0, left: 50, top: 15, bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           messageTextGroup,
         ],
       ),

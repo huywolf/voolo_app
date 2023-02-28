@@ -7,19 +7,18 @@ class AppCheckbox extends StatefulWidget {
   final bool? checked;
   final Function(bool?)? onChecked;
 
-  AppCheckbox({this.label, this.checked, this.onChecked});
+  const AppCheckbox({super.key, this.label, this.checked, this.onChecked});
 
   @override
-  _AppCheckboxState createState() => _AppCheckboxState();
+  AppCheckboxState createState() => AppCheckboxState();
 }
 
-class _AppCheckboxState extends State<AppCheckbox> {
+class AppCheckboxState extends State<AppCheckbox> {
   bool? _checked = false;
 
   void _onChecked(bool? checked) {
-    print(checked);
     setState(() {
-      this._checked = checked;
+      _checked = checked;
     });
 
     if (widget.onChecked != null) {
@@ -36,17 +35,14 @@ class _AppCheckboxState extends State<AppCheckbox> {
           SizedBox(
             width: 24.0,
             height: 24.0,
-            child: Checkbox(
-                value: _checked,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                onChanged: _onChecked),
+            child: Checkbox(value: _checked, materialTapTargetSize: MaterialTapTargetSize.shrinkWrap, onChanged: _onChecked),
           ),
           CommonWidget.rowWidth(width: 10.0),
           Flexible(
             child: Text(
               widget.label!,
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 13.0,
                 color: Colors.white,
               ),

@@ -4,7 +4,6 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voolo_app/app_config.dart';
 import 'package:voolo_app/shared/shared.dart';
-import 'bnpl_dio_response.dart';
 
 class BnplDioClient {
   static final instance = BnplDioClient._();

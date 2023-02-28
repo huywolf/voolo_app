@@ -1,6 +1,7 @@
 const Map<String, String> vi_VN = {
   'home': 'Trang chủ',
   'history': 'Lịch sử',
+  'promo': 'Khuyến mãi',
   'account': 'Tài khoản',
   'update_locale': 'Thay đổi ngôn ngữ',
   'logout': 'Đăng xuất',

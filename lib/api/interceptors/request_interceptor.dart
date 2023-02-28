@@ -6,8 +6,5 @@ FutureOr<Request> requestInterceptor(request) async {
 
   // request.headers['X-Requested-With'] = 'XMLHttpRequest';
   // request.headers['Authorization'] = 'Bearer $token';
-
-  print(request.headers);
-  print(request.method);
   return request;
 }

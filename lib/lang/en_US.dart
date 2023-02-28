@@ -1,6 +1,7 @@
 const Map<String, String> en_US = {
   'home': 'Home',
   'history': 'History',
+  'promo': 'Promotion',
   'account': 'Account',
   'update_locale': 'Update locale',
   'logout': 'Logout',

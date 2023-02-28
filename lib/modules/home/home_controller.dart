@@ -17,6 +17,7 @@ class HomeController extends GetxController {
 
   late HomeTab homeTab;
   late HistoryTab historyTab;
+  late PromoTab promoTab;
   late AccountTab accountTab;
 
   @override
@@ -25,16 +26,8 @@ class HomeController extends GetxController {
 
     homeTab = const HomeTab();
     historyTab = const HistoryTab();
+    promoTab = const PromoTab();
     accountTab = const AccountTab();
-  }
-
-  Future<void> loadUsers() async {
-    var _users = await apiRepository.getUsers();
-    if (_users!.data!.length > 0) {
-      users.value = _users;
-      users.refresh();
-      _saveUserInfo(_users);
-    }
   }
 
   void signout() {
@@ -57,34 +50,7 @@ class HomeController extends GetxController {
     // print(userInfoObj);
   }
 
-  void switchTab(index) {
-    var tab = _getCurrentTab(index);
+  void switchTab(MainTabs tab) {
     currentTab.value = tab;
-  }
-
-  int getCurrentIndex(MainTabs tab) {
-    switch (tab) {
-      case MainTabs.home:
-        return 0;
-      case MainTabs.notifcation:
-        return 1;
-      case MainTabs.account:
-        return 2;
-      default:
-        return 0;
-    }
-  }
-
-  MainTabs _getCurrentTab(int index) {
-    switch (index) {
-      case 0:
-        return MainTabs.home;
-      case 1:
-        return MainTabs.notifcation;
-      case 2:
-        return MainTabs.account;
-      default:
-        return MainTabs.home;
-    }
   }
 }
