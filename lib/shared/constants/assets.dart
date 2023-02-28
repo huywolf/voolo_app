@@ -20,6 +20,9 @@ class Assets {
   static const String botNavPromo = iconPrefix + 'bot_nav_promo.png';
   static const String botNavAccount = iconPrefix + 'bot_nav_account.png';
   static const String botNavHomeActive = iconPrefix + 'bot_nav_home_active.png';
+  static const String botNavHistoryActive = iconPrefix + 'bot_nav_history_active.png';
+  static const String botNavPromoActive = iconPrefix + 'bot_nav_promo_active.png';
+  static const String botNavAccountActive = iconPrefix + 'bot_nav_account_active.png';
 
   // Svg image
   static const String iconScan = svgPrefix + 'icon_scan.svg';

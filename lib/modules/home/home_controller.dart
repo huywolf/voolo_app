@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   final ApiRepository apiRepository;
   HomeController({required this.apiRepository});
 
-  var currentTab = MainTabs.home.obs;
+  var currentTabIndex = 0.obs;
   var users = Rxn<UsersResponse>();
   var user = Rxn<Datum>();
 
@@ -50,7 +50,7 @@ class HomeController extends GetxController {
     // print(userInfoObj);
   }
 
-  void switchTab(MainTabs tab) {
-    currentTab.value = tab;
+  void switchTab(int index) {
+    currentTabIndex.value = index;
   }
 }
