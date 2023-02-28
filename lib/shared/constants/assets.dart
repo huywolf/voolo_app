@@ -26,4 +26,5 @@ class Assets {
 
   // Svg image
   static const String iconScan = svgPrefix + 'icon_scan.svg';
+  static const String iconVooloLogo = svgPrefix + 'icon_voolo_logo.svg';
 }

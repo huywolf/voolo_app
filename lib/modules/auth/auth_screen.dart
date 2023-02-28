@@ -21,6 +21,7 @@ class AuthScreen extends GetView<AuthController> {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: SafeArea(
+          bottom: false,
           child: Container(
             decoration: const BoxDecoration(color: Color(0xFFF3F3F3)),
             child: Stack(
