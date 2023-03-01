@@ -8,7 +8,8 @@ class ColorConstants {
   static const Color secondaryDarkAppColor = Colors.white;
   static const Color tipColor = Color(0xffB6B6B6);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color redError = Color(0xFFF75555);
+
+  static const Color redError = Color(0xFFEE4D2D);
 
   static const Color black = Color(0xFF000000);
   static const Color blackText = Color(0xFF000000);
@@ -18,4 +19,6 @@ class ColorConstants {
   static const Color lightGray = Color(0xFFF6F6F6);
   static const Color darkGray = Color(0xFF9F9F9F);
   static const Color greyText = Color(0xFF9E9E9E);
+
+  static const Color blueLink = Color(0xff197DDE);
 }

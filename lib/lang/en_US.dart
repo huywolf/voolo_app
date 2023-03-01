@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, constant_identifier_names
+
 const Map<String, String> en_US = {
   'home': 'Home',
   'history': 'History',
@@ -10,5 +12,8 @@ const Map<String, String> en_US = {
   'vietnamese': 'Vietnamese',
   'english': 'English',
   'voolo_account': 'VOOLO Account',
-  'loading': "Loading..."
+  'loading': "Loading...",
+
+  // Validate message
+  'invalid_otp': "Invalid OTP",
 };

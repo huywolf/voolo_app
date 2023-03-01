@@ -1,6 +1,7 @@
-import 'package:voolo_app/routes/routes.dart';
 import 'package:get/get.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:voolo_app/routes/app_pages.dart';
+import 'package:voolo_app/shared/shared.dart';
 
 class SplashController extends GetxController {
   @override
@@ -8,17 +9,16 @@ class SplashController extends GetxController {
     super.onReady();
 
     await Future.delayed(const Duration(milliseconds: 1000));
-    // var storage = Get.find<SharedPreferences>();
+    var storage = Get.find<SharedPreferences>();
 
-    Get.toNamed(Routes.HOME);
-    // try {
-    //   if (storage.getString(StorageConstants.token) != null) {
-    //     Get.toNamed(Routes.HOME);
-    //   } else {
-    //     Get.toNamed(Routes.AUTH);
-    //   }
-    // } catch (e) {
-    //   Get.toNamed(Routes.AUTH);
-    // }
+    try {
+      if (storage.getString(StorageConstants.accessToken) != null) {
+        Get.offAndToNamed(Routes.HOME);
+      } else {
+        Get.offAndToNamed(Routes.AUTH);
+      }
+    } catch (e) {
+      Get.offAndToNamed(Routes.AUTH);
+    }
   }
 }

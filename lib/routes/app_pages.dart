@@ -1,9 +1,14 @@
-import 'package:voolo_app/modules/auth/auth.dart';
+import 'package:voolo_app/modules/auth/auth_binding.dart';
+import 'package:voolo_app/modules/auth/view/auth_screen.dart';
 import 'package:voolo_app/modules/home/home.dart';
-import 'package:get/get.dart';
+import 'package:voolo_app/modules/splash/splash_binding.dart';
+import 'package:voolo_app/modules/splash/splash_screen.dart';
+import 'package:voolo_app/modules/verify_bnpl/verify_bnpl_binding.dart';
+import 'package:voolo_app/modules/verify_bnpl/view/verify_bnpl_screen.dart';
+import 'package:voolo_app/modules/verify_otp/verify_otp_binding.dart';
+import 'package:voolo_app/modules/verify_otp/view/verify_otp_screen.dart';
 
-import '../modules/splash/splash.dart';
-import '../modules/verify_bnpl/verify_bnpl.dart';
+import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -16,12 +21,13 @@ class AppPages {
     ),
     GetPage(
       name: Routes.AUTH,
-      page: () => AuthScreen(),
+      page: () => const AuthScreen(),
       binding: AuthBinding(),
-      children: [
-        GetPage(name: Routes.REGISTER, page: () => RegisterScreen(), transition: Transition.rightToLeft),
-        GetPage(name: Routes.LOGIN, page: () => LoginScreen()),
-      ],
+    ),
+    GetPage(
+      name: Routes.VERIFY_OTP,
+      page: () => const VerifyOtpScreen(),
+      binding: VerifyOtpBinding(),
     ),
     GetPage(
       name: Routes.HOME,

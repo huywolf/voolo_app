@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, constant_identifier_names
+
 const Map<String, String> vi_VN = {
   'home': 'Trang chủ',
   'history': 'Lịch sử',
@@ -10,5 +12,8 @@ const Map<String, String> vi_VN = {
   'vietnamese': 'Tiếng Việt',
   'english': 'Tiếng Anh',
   'voolo_account': 'Tài khoản VOOLO',
-  'loading': "Đang tải..."
+  'loading': "Đang tải...",
+
+  // Validate message
+  'invalid_otp': "Mã OTP không hợp lệ",
 };

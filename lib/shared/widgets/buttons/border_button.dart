@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_initializing_formals
+
 import 'package:flutter/material.dart';
 
 class BorderButton extends StatelessWidget {
-  final _GradientPainter _painter;
+  final GradientPainter _painter;
   final String _text;
   final Widget? _child;
   final VoidCallback? _callback;
@@ -9,6 +11,7 @@ class BorderButton extends StatelessWidget {
   final Color backgroundColor;
 
   BorderButton({
+    super.key,
     double strokeWidth = 1,
     double radius = 22,
     Gradient? gradient,
@@ -16,7 +19,7 @@ class BorderButton extends StatelessWidget {
     Widget? child,
     VoidCallback? onPressed,
     this.backgroundColor = Colors.transparent,
-  })  : _painter = _GradientPainter(
+  })  : _painter = GradientPainter(
           strokeWidth: strokeWidth,
           radius: radius,
           gradient: gradient ??
@@ -69,19 +72,19 @@ class BorderButton extends StatelessWidget {
   }
 }
 
-class _GradientPainter extends CustomPainter {
+class GradientPainter extends CustomPainter {
   final Paint _paint = Paint();
   final double radius;
   final double strokeWidth;
   final Gradient gradient;
 
-  _GradientPainter({
+  GradientPainter({
     required double strokeWidth,
     required double radius,
     required Gradient gradient,
-  })  : this.strokeWidth = strokeWidth,
-        this.radius = radius,
-        this.gradient = gradient;
+  })  : strokeWidth = strokeWidth,
+        radius = radius,
+        gradient = gradient;
 
   @override
   void paint(Canvas canvas, Size size) {

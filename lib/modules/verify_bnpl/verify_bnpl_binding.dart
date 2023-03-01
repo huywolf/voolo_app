@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../controller/verify_bnpl_controller.dart';
+import 'controller/verify_bnpl_controller.dart';
 
 class VerifyBnplBinding extends Bindings {
   @override

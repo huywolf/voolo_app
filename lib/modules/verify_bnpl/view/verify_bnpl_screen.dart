@@ -26,9 +26,9 @@ class VerifyBnplScreen extends GetView<VerifyBnplController> {
             const SizedBox(height: 10),
             Obx(() {
               if (controller.step.value == 1) {
-                return Text("Bạn chưa có tài khoản BNPL");
+                return const Text("Bạn chưa có tài khoản BNPL");
               }
-              return Text("Số tài khoản này đã đăng ký BNPL");
+              return const Text("Số tài khoản này đã đăng ký BNPL");
             })
           ],
         ),

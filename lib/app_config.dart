@@ -9,5 +9,7 @@ class AppConfig {
   static const hyperVergeAppKey = 'c76484b87c0c78f6';
 
   // EAP
-  static const vooloBaseUrl = 'https://api.eapv2.voolo.vn';
+  static const baseUrl = 'https://api.eapv2.voolo.vn/v1/eap';
+  static const appKey = 'c76484b87c0c78f6';
+  static const appId = '5bb7eb0ec75b7453';
 }

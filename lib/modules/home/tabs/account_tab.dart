@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/modules/home/home.dart';
-import 'package:voolo_app/routes/routes.dart';
+import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:voolo_app/shared/widgets/buttons/app_elevated_button.dart';
@@ -23,7 +23,7 @@ class AccountTab extends GetView<HomeController> {
             AppElevatedButton(
               onPressed: () {
                 Get.back();
-                Get.updateLocale(Locale('vi', 'VN'));
+                Get.updateLocale(const Locale('vi', 'VN'));
               },
               text: "vietnamese".tr,
               radius: 10,
@@ -33,7 +33,7 @@ class AccountTab extends GetView<HomeController> {
             AppElevatedButton(
               onPressed: () {
                 Get.back();
-                Get.updateLocale(Locale('en', 'US'));
+                Get.updateLocale(const Locale('en', 'US'));
               },
               text: "english".tr,
               radius: 10,

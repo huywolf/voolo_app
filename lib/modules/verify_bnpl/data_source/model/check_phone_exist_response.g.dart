@@ -10,12 +10,16 @@ CheckPhoneExistResponse _$CheckPhoneExistResponseFromJson(
         Map<String, dynamic> json) =>
     CheckPhoneExistResponse(
       step: json['step'] as int?,
+      status: json['status'] as bool?,
+      statusCode: json['statusCode'] as int?,
     );
 
 Map<String, dynamic> _$CheckPhoneExistResponseToJson(
         CheckPhoneExistResponse instance) =>
     <String, dynamic>{
       'step': instance.step,
+      'status': instance.status,
+      'statusCode': instance.statusCode,
     };
 
 CheckPhoneExistData _$CheckPhoneExistDataFromJson(Map<String, dynamic> json) =>

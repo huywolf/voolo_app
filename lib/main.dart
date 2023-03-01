@@ -4,10 +4,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 
-import 'app_binding.dart';
 import 'di.dart';
 import 'lang/translation_service.dart';
-import 'routes/routes.dart';
+import 'routes/app_pages.dart';
 import 'theme/theme.dart';
 
 void main() async {
@@ -17,13 +16,15 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: false,
-      builder: (context) => App(), // Wrap your app
+      builder: (context) => const App(), // Wrap your app
     ),
   );
   configLoading();
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -32,7 +33,6 @@ class App extends StatelessWidget {
       initialRoute: Routes.SPLASH,
       defaultTransition: Transition.fade,
       getPages: AppPages.routes,
-      initialBinding: AppBinding(),
       smartManagement: SmartManagement.keepFactory,
       title: 'Voolo App',
       theme: ThemeConfig.lightTheme,
