@@ -27,7 +27,7 @@ class LoginView extends GetView<AuthController> {
             children: [
               const BlurryContainer(),
               Positioned(
-                top: -40,
+                top: 0,
                 right: 0,
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),

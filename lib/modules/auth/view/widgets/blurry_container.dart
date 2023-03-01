@@ -26,7 +26,7 @@ class BlurryContainer extends StatelessWidget {
               stops: const [0.1, 0.5, 0.6],
               tileMode: TileMode.mirror,
               colors: <Color>[
-                const Color(0xff197DEE).withOpacity(0.3),
+                const Color(0xff197DEE).withOpacity(0.15),
                 const Color(0xffCE53AD).withOpacity(0.15),
                 const Color(0xffF18F61).withOpacity(0.15),
               ], // Gradient from https://learnui.design/tools/gradient-generator.html
