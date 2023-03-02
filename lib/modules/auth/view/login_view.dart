@@ -34,71 +34,7 @@ class LoginView extends GetView<AuthController> {
                   child: const SizedBox(),
                 ),
               ),
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    const SizedBox(height: 120),
-                    const Text(
-                      "Đăng nhập",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
-                    ),
-                    const SizedBox(height: 50),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      child: Form(
-                        key: controller.loginFormKey,
-                        child: Column(
-                          children: [
-                            DefaultTextField(
-                              controller: controller.loginPhoneEmailController,
-                              labelText: "Số điện thoại/Email",
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Vui lòng nhập số điện thoại/email.';
-                                }
-                                return null;
-                              },
-                            ),
-                            const SizedBox(height: 20),
-                            DefaultTextField(
-                              controller: controller.loginPasswordController,
-                              labelText: "Mật khẩu",
-                              obscureText: true,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return 'Vui lòng nhập mật khẩu.';
-                                }
-                                return null;
-                              },
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: const [
-                                Text(
-                                  "Quên mật khẩu?",
-                                  style: TextStyle(color: Color(0xff197DDE), fontSize: 13, fontWeight: FontWeight.w400),
-                                )
-                              ],
-                            ),
-                            const SizedBox(height: 60),
-                            AppElevatedButton(
-                              onPressed: () async {
-                                controller.login(context);
-                              },
-                              buttonHeight: 40,
-                              radius: 30,
-                              text: "Đăng nhập",
-                              buttonBgColor: Colors.black,
-                            ),
-                            const SizedBox(height: 50),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              _buildMainContent(context),
               Positioned(
                 bottom: 50,
                 child: Row(
@@ -126,6 +62,74 @@ class LoginView extends GetView<AuthController> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildMainContent(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 120),
+          const Text(
+            "Đăng nhập",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
+          ),
+          const SizedBox(height: 50),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: Form(
+              key: controller.loginFormKey,
+              child: Column(
+                children: [
+                  DefaultTextField(
+                    controller: controller.loginPhoneEmailController,
+                    labelText: "Số điện thoại/Email",
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Vui lòng nhập số điện thoại/email.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  DefaultTextField(
+                    controller: controller.loginPasswordController,
+                    labelText: "Mật khẩu",
+                    obscureText: true,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Vui lòng nhập mật khẩu.';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      Text(
+                        "Quên mật khẩu?",
+                        style: TextStyle(color: Color(0xff197DDE), fontSize: 13, fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 60),
+                  AppElevatedButton(
+                    onPressed: () async {
+                      controller.login(context);
+                    },
+                    buttonHeight: 40,
+                    radius: 30,
+                    text: "Đăng nhập",
+                    buttonBgColor: Colors.black,
+                  ),
+                  const SizedBox(height: 50),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

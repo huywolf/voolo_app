@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:voolo_app/modules/auth/view/widgets/blurry_container.dart';
 import 'package:voolo_app/shared/constants/assets.dart';
 import 'package:voolo_app/shared/shared.dart';

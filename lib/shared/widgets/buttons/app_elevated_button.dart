@@ -35,33 +35,32 @@ class AppElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: MaterialButton(
-        height: buttonHeight ?? 50,
-        elevation: elevation,
-        onPressed: disabled ? null : onPressed,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radius ?? 0),
-          side: borderSide ?? BorderSide.none,
-        ),
-        color: buttonBgColor ?? ColorConstants.primary,
-        disabledColor: disableButtonBgColor ?? const Color(0xff9A9393).withOpacity(0.1),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            disabled
-                ? Text(
-                    text,
-                    style: disableTextStyle ?? const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                : Text(
-                    text,
-                    style: textStyle ?? const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-            buildLoading(Colors.white)
-          ],
-        ),
+    return MaterialButton(
+      height: buttonHeight ?? 50,
+      padding: EdgeInsets.zero,
+      elevation: elevation,
+      onPressed: disabled ? null : onPressed,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(radius ?? 0),
+        side: borderSide ?? BorderSide.none,
+      ),
+      color: buttonBgColor ?? ColorConstants.primary,
+      disabledColor: disableButtonBgColor ?? const Color(0xffBABABA),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          disabled
+              ? Text(
+                  text,
+                  style: disableTextStyle ?? const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                )
+              : Text(
+                  text,
+                  style: textStyle ?? const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+          buildLoading(Colors.white)
+        ],
       ),
     );
   }

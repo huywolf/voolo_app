@@ -27,14 +27,14 @@ class GradientButton extends StatelessWidget {
       height: 64.0,
       decoration: BoxDecoration(
         gradient: gradient ??
-            LinearGradient(
+            const LinearGradient(
               colors: <Color>[
                 Color(0xff405FA3),
                 Color(0xff1ED69D),
               ],
             ),
         borderRadius: BorderRadius.circular(22.0),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color(0xffE5F5FF),
             offset: Offset(0.0, 1.5),
@@ -50,7 +50,7 @@ class GradientButton extends StatelessWidget {
             child: text != ""
                 ? Text(
                     text,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: CommonConstants.normalText,
                       fontWeight: FontWeight.bold,

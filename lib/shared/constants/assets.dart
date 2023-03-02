@@ -10,6 +10,8 @@ class Assets {
   static const String vooloIcon = imagePrefix + 'voolo_logo.png';
   static const String visibility = imagePrefix + 'visibility.png';
   static const String visibilityOff = imagePrefix + 'visibility_off.png';
+  static const String vietnameseLang = imagePrefix + 'vietnamese_lang.png';
+  static const String englishLang = imagePrefix + 'english_lang.png';
 
   // Icons
   static const String botNavScan = iconPrefix + 'bot_nav_scan.png';

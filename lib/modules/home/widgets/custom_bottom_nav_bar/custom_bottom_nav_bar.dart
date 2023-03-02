@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
@@ -271,8 +273,8 @@ class CustomBottomNavBarState extends State<CustomBottomNavBar> with TickerProvi
 
   late AnimationController _bubbleController;
 
-  double _bubbleRadius = 0;
-  double _iconScale = 1;
+  final double _bubbleRadius = 0;
+  final double _iconScale = 1;
 
   @override
   void didChangeDependencies() {

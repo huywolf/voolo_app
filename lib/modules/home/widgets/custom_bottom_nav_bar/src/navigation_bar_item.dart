@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'bubble_selection_painter.dart';
 import 'tab_item.dart';
 
 class NavigationBarItem extends StatelessWidget {

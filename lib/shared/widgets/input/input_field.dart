@@ -27,7 +27,7 @@ class InputField extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
         fillColor: Colors.transparent,
-        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 10.0),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: color),
         ),

@@ -66,15 +66,17 @@ class CircularNotchedAndCorneredRectangle extends NotchedShape {
     final halfOfHostWidth = host.width ~/ 2;
 
     if (guestCenterDx == halfOfHostWidth) {
-      if (gapLocation != GapLocation.center)
+      if (gapLocation != GapLocation.center) {
         throw GapLocationException('Wrong gap location in $CustomBottomNavBar towards FloatingActionButtonLocation => '
             'consider use ${GapLocation.center} instead of $gapLocation or change FloatingActionButtonLocation');
+      }
     }
 
     if (guestCenterDx != halfOfHostWidth) {
-      if (gapLocation != GapLocation.end)
+      if (gapLocation != GapLocation.end) {
         throw GapLocationException('Wrong gap location in $CustomBottomNavBar towards FloatingActionButtonLocation => '
             'consider use ${GapLocation.end} instead of $gapLocation or change FloatingActionButtonLocation');
+      }
     }
 
     // The guest's shape is a circle bounded by the guest rectangle.
@@ -119,7 +121,9 @@ class CircularNotchedAndCorneredRectangle extends NotchedShape {
     p[5] = Offset(-1.0 * p[0].dx, p[0].dy);
 
     // translate all points back to the absolute coordinate system.
-    for (int i = 0; i < p.length; i += 1) p[i] += guest.center;
+    for (int i = 0; i < p.length; i += 1) {
+      p[i] += guest.center;
+    }
 
     return Path()
       ..moveTo(host.left, host.bottom)

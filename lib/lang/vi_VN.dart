@@ -13,6 +13,8 @@ const Map<String, String> vi_VN = {
   'english': 'Tiếng Anh',
   'voolo_account': 'Tài khoản VOOLO',
   'loading': "Đang tải...",
+  'choose_your_language': "Chọn ngôn ngữ của bạn",
+  'continue': "Tiếp tục",
 
   // Validate message
   'invalid_otp': "Mã OTP không hợp lệ",

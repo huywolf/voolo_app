@@ -17,10 +17,10 @@ class NonAppropriatePathException implements Exception {
 }
 
 class IllegalFloatingActionButtonSizeException implements Exception {
-  String _cause;
+  String cause;
 
-  IllegalFloatingActionButtonSizeException(this._cause) : super();
+  IllegalFloatingActionButtonSizeException(this.cause) : super();
 
   @override
-  String toString() => _cause;
+  String toString() => cause;
 }
