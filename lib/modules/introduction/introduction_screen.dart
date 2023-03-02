@@ -18,7 +18,7 @@ class IntroductionScreen extends GetView<IntroductionController> {
         backgroundColor: Colors.transparent,
         title: Padding(
           padding: const EdgeInsets.only(top: 10),
-          child: Image.asset(Assets.vooloIcon, width: 165),
+          child: Image.asset(Assets.VOOLO_ICON, width: 165),
         ),
         toolbarHeight: 60,
       ),
@@ -27,22 +27,22 @@ class IntroductionScreen extends GetView<IntroductionController> {
         onPageChanged: controller.onPageChange,
         children: [
           buidPageView(
-            imagePath: Assets.introductionScreen1,
+            imagePath: Assets.INTRODUCTION_SCREEN_1,
             text: "unlimited_shopping".tr,
           ),
           buidPageView(
-            imagePath: Assets.introductionScreen2,
+            imagePath: Assets.INTRODUCTION_SCREEN_2,
             text: "flexible_shopping".tr,
           ),
           buidPageView(
-            imagePath: Assets.introductionScreen3,
+            imagePath: Assets.INTRODUCTION_SCREEN_3,
             text: "zero_interest".tr,
             imagePadding: 30,
           ),
         ],
       ),
       bottomSheet: Container(
-        color: ColorConstants.GREY_SCAFFOLD_BG_COLOR,
+        color: ColorConstants.GREY_SCAFFOLD_BACKGROUND,
         alignment: Alignment.center,
         height: 100,
         padding: const EdgeInsets.only(bottom: 50),
@@ -84,7 +84,7 @@ class IntroductionScreen extends GetView<IntroductionController> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 24,
-                color: ColorConstants.blackText,
+                color: ColorConstants.BLACK_TEXT,
                 fontWeight: FontWeight.bold,
               ),
             ),

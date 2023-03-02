@@ -37,7 +37,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: Dimension.scaffoldHorPadding),
+                padding: const EdgeInsets.symmetric(horizontal: Dimension.SCAFFOLD_HOR_PADDING),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -51,11 +51,11 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                       textAlign: TextAlign.center,
                       text: TextSpan(
                         text: 'Mã OTP đã được gửi đến email ',
-                        style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.smallFS),
+                        style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                         children: <TextSpan>[
                           TextSpan(
                             text: EncodeString.encodeEmail(controller.screenArg.email),
-                            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: AppTextStyles.smallFS),
+                            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: AppTextStyles.SMALL_FS),
                           ),
                         ],
                       ),
@@ -102,7 +102,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
                             "${controller.validateOtpError.value} (${controller.countFail.value}/5) ",
-                            style: const TextStyle(color: ColorConstants.redError, fontWeight: FontWeight.w400, fontSize: AppTextStyles.smallFS),
+                            style: const TextStyle(color: ColorConstants.RED_ERROR, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                           ),
                         );
                       }
@@ -128,7 +128,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                       children: [
                         const Text(
                           "Không nhận được OTP? ",
-                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.smallFS),
+                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                         ),
                         InkWell(
                           onTap: () {},
@@ -136,9 +136,9 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                             () => Text(
                               "Gửi lại OTP (${controller.counter.value}s)",
                               style: const TextStyle(
-                                color: ColorConstants.blueLink,
+                                color: ColorConstants.BLUE_LINK,
                                 fontWeight: FontWeight.w400,
-                                fontSize: AppTextStyles.smallFS,
+                                fontSize: AppTextStyles.SMALL_FS,
                                 decoration: TextDecoration.underline,
                               ),
                             ),
@@ -164,7 +164,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                     child: const Text(
                       "Đăng nhập",
                       style: TextStyle(
-                        color: ColorConstants.blueLink,
+                        color: ColorConstants.BLUE_LINK,
                         fontSize: 13,
                         fontWeight: FontWeight.w400,
                         decoration: TextDecoration.underline,

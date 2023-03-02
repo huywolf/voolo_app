@@ -9,7 +9,7 @@ class HistoryTab extends StatelessWidget {
     return Scaffold(
       appBar: CommonWidget.vooloAppBar(context),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: Dimension.scaffoldHorPadding),
+        padding: const EdgeInsets.symmetric(horizontal: Dimension.SCAFFOLD_HOR_PADDING),
         child: const Center(
           child: Text(
             "Trang lịch sử",

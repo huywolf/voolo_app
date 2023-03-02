@@ -38,11 +38,11 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
       child: Column(
         children: [
           const SizedBox(height: 80),
-          Image.asset(Assets.vooloIcon, width: 200),
+          Image.asset(Assets.VOOLO_ICON, width: 200),
           const SizedBox(height: 30),
           Text(
             "choose_your_language".tr,
-            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: AppTextStyles.mediumFS, fontFamily: "Montserrat"),
+            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: AppTextStyles.MEDIUM_FS, fontFamily: "Montserrat"),
           ),
           const SizedBox(height: 60),
           Padding(
@@ -52,14 +52,14 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
                 Obx(() => _buildLanguageBtn(
                       type: LanguageType.vietnamese,
                       lable: 'vietnamese'.tr,
-                      asset: Assets.vietnameseLang,
+                      asset: Assets.VIETNAMESE_LANG,
                       isSelected: controller.curLanguageType.value == LanguageType.vietnamese,
                     )),
                 const SizedBox(height: 20),
                 Obx(() => _buildLanguageBtn(
                       type: LanguageType.english,
                       lable: 'english'.tr,
-                      asset: Assets.englishLang,
+                      asset: Assets.ENGLISH_LANG,
                       isSelected: controller.curLanguageType.value == LanguageType.english,
                     )),
                 const SizedBox(height: 50),
@@ -93,12 +93,12 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xffDADADA) : Colors.white,
-          border: Border.all(color: ColorConstants.greyBoder),
+          border: Border.all(color: ColorConstants.GREY_BODER),
           borderRadius: BorderRadius.circular(34),
         ),
         child: Row(
           children: [
-            Text(lable, style: AppTextStyles.normal),
+            Text(lable, style: AppTextStyles.NORMAL),
             const Expanded(child: SizedBox()),
             Image.asset(asset, height: 45),
           ],

@@ -10,17 +10,17 @@ class HomeScreen extends GetView<HomeController> {
   HomeScreen({super.key});
 
   final iconList = [
-    Assets.botNavHome,
-    Assets.botNavHistory,
-    Assets.botNavPromo,
-    Assets.botNavAccount,
+    Assets.BOT_NAV_HOME,
+    Assets.BOT_NAV_HISTORY,
+    Assets.BOT_NAV_PROMO,
+    Assets.BOT_NAV_ACCOUNT,
   ];
 
   final iconListActive = [
-    Assets.botNavHomeActive,
-    Assets.botNavHistoryActive,
-    Assets.botNavPromoActive,
-    Assets.botNavAccountActive,
+    Assets.BOT_NAV_HOME_ACTIVE,
+    Assets.BOT_NAV_HISTORY_ACTIVE,
+    Assets.BOT_NAV_PROMO_ACTIVE,
+    Assets.BOT_NAV_ACCOUNT_ACTIVE,
   ];
 
   final tabTitle = <String>[
@@ -37,7 +37,7 @@ class HomeScreen extends GetView<HomeController> {
       child: Obx(() => Scaffold(
             body: _buildContent(controller.currentTabIndex.value),
             floatingActionButton: FloatingActionButton(
-              child: Image.asset(Assets.botNavScan),
+              child: Image.asset(Assets.BOT_NAV_SCAN),
               onPressed: () {},
             ),
             floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

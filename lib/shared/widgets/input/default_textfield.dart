@@ -50,7 +50,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
 
   OutlineInputBorder _buildOutlineInputBorder() {
     return OutlineInputBorder(
-      borderSide: const BorderSide(color: ColorConstants.greyBoder),
+      borderSide: const BorderSide(color: ColorConstants.GREY_BODER),
       borderRadius: BorderRadius.circular(40),
     );
   }
@@ -62,7 +62,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       children: [
         Text(
           widget.labelText ?? "",
-          style: const TextStyle(color: Colors.black, fontSize: AppTextStyles.smallFS, fontWeight: FontWeight.w600),
+          style: const TextStyle(color: Colors.black, fontSize: AppTextStyles.SMALL_FS, fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 6),
         TextFormField(
@@ -76,11 +76,11 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             focusedErrorBorder: _buildOutlineInputBorder(),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: widget.hintText,
-            hintStyle: AppTextStyles.small.copyWith(color: ColorConstants.greyText),
+            hintStyle: AppTextStyles.SMALL.copyWith(color: ColorConstants.GREY_TEXT),
           ),
           cursorColor: Colors.black,
           controller: widget.controller,
-          style: AppTextStyles.normalBold,
+          style: AppTextStyles.NORMALBold,
           obscureText: obscureText ?? false,
           autocorrect: false,
           validator: widget.validator,

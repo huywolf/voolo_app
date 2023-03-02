@@ -52,9 +52,9 @@ void configLoading() {
     // ..indicatorSize = 45.0
     ..radius = 10.0
     // ..progressColor = Colors.yellow
-    ..backgroundColor = ColorConstants.lightGray
-    ..indicatorColor = ColorConstants.primary
-    ..textColor = ColorConstants.primary
+    ..backgroundColor = ColorConstants.GRAY_LIGHT
+    ..indicatorColor = ColorConstants.PRIMARY
+    ..textColor = ColorConstants.PRIMARY
     // ..maskColor = Colors.red
     ..userInteractions = false
     ..dismissOnTap = false

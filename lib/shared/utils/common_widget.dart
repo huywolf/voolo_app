@@ -35,7 +35,7 @@ class CommonWidget {
     return AppBar(
       leading: showBackButton ? null : const SizedBox(),
       centerTitle: true,
-      title: Image.asset(Assets.vooloIcon, height: 32),
+      title: Image.asset(Assets.VOOLO_ICON, height: 32),
       backgroundColor: Colors.white,
       elevation: 1,
       systemOverlayStyle: const SystemUiOverlayStyle(

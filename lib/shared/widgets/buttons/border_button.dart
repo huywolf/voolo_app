@@ -92,7 +92,7 @@ class GradientPainter extends CustomPainter {
     Rect outerRect = Offset.zero & size;
     var outerRRect = RRect.fromRectAndRadius(outerRect, Radius.circular(radius));
 
-    // create inner rectangle smaller by strokeWidth
+    // create inner rectangle SMALLer by strokeWidth
     Rect innerRect = Rect.fromLTWH(strokeWidth, strokeWidth, size.width - strokeWidth * 2, size.height - strokeWidth * 2);
     var innerRRect = RRect.fromRectAndRadius(innerRect, Radius.circular(radius - strokeWidth));
 

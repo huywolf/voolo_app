@@ -49,7 +49,7 @@ class LoginView extends GetView<AuthController> {
                       child: const Text(
                         "Đăng ký",
                         style: TextStyle(
-                          color: ColorConstants.blueLink,
+                          color: ColorConstants.BLUE_LINK,
                           fontSize: 13,
                           fontWeight: FontWeight.w400,
                           decoration: TextDecoration.underline,

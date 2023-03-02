@@ -13,7 +13,7 @@ class HomeTab extends GetView<HomeController> {
       child: Scaffold(
         appBar: CommonWidget.vooloAppBar(context),
         body: Container(
-          padding: const EdgeInsets.symmetric(horizontal: Dimension.scaffoldHorPadding),
+          padding: const EdgeInsets.symmetric(horizontal: Dimension.SCAFFOLD_HOR_PADDING),
           child: const Center(
             child: Text(
               "Trang chủ",

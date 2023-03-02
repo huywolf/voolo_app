@@ -54,7 +54,7 @@ class AccountTab extends GetView<HomeController> {
   Widget _buildListItems() {
     return Container(
       decoration: const BoxDecoration(
-        color: ColorConstants.white,
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20),
           topLeft: Radius.circular(20),

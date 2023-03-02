@@ -31,11 +31,11 @@ class AccountItem extends StatelessWidget {
                 Expanded(
                     child: Text(
                   title,
-                  style: const TextStyle(color: ColorConstants.blackText, fontSize: 16),
+                  style: const TextStyle(color: ColorConstants.BLACK_TEXT, fontSize: 16),
                 )),
                 const Icon(
                   Icons.chevron_right,
-                  color: ColorConstants.greyText,
+                  color: ColorConstants.GREY_TEXT,
                 ),
               ],
             ),

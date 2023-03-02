@@ -11,7 +11,7 @@ class VerifyBnplScreen extends GetView<VerifyBnplController> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("TK Mua trước trả sau", style: AppTextStyles.largeBold),
+        title: const Text("TK Mua trước trả sau", style: AppTextStyles.LARGE_BOLD),
         backgroundColor: Colors.white,
         elevation: 1,
       ),

@@ -39,11 +39,11 @@ class BnplDioClient {
             "appKey": AppConfig.bnplAppKey,
             "appID": AppConfig.bnplAppId,
           };
-          var accessToken = Get.find<SharedPreferences>().getString(StorageConstants.accessToken);
-          if (accessToken != null) {
-            headers["Authorization"] = "Bearer $accessToken";
+          var ACCESS_TOKEN = Get.find<SharedPreferences>().getString(StorageConstants.ACCESS_TOKEN);
+          if (ACCESS_TOKEN != null) {
+            headers["Authorization"] = "Bearer $ACCESS_TOKEN";
           }
-          // UtilLogger.logInfo('Access Token: $accessToken');
+          // UtilLogger.logInfo('Access Token: $ACCESS_TOKEN');
           options.headers.addAll(headers);
           return handler.next(options);
         },

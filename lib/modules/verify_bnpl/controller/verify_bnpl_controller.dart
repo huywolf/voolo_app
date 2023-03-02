@@ -22,7 +22,7 @@ class VerifyBnplController extends GetxController {
 
   void initData() {
     var prefs = Get.find<SharedPreferences>();
-    phoneNumber = prefs.get(StorageConstants.phoneNumber).toString();
+    phoneNumber = prefs.get(StorageConstants.PHONE_NUMBER).toString();
     phoneNumber = "0955555551";
   }
 

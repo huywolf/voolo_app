@@ -108,29 +108,29 @@ class ThemeConfig {
 
   static ThemeData get lightTheme => createTheme(
         brightness: Brightness.light,
-        background: ColorConstants.lightScaffoldBackgroundColor,
-        cardBackground: ColorConstants.secondaryAppColor,
+        background: ColorConstants.LIGHT_SCAFFOLD_BACKGROUND,
+        cardBackground: ColorConstants.SECONDARY_APP,
         primaryText: Colors.black,
         secondaryText: Colors.black,
-        accentColor: ColorConstants.secondaryAppColor,
-        divider: ColorConstants.secondaryAppColor,
+        accentColor: ColorConstants.SECONDARY_APP,
+        divider: ColorConstants.SECONDARY_APP,
         buttonBackground: Colors.black38,
-        buttonText: ColorConstants.secondaryAppColor,
-        disabled: ColorConstants.secondaryAppColor,
+        buttonText: ColorConstants.SECONDARY_APP,
+        disabled: ColorConstants.SECONDARY_APP,
         error: Colors.red,
       );
 
   static ThemeData get darkTheme => createTheme(
         brightness: Brightness.dark,
-        background: ColorConstants.darkScaffoldBackgroundColor,
-        cardBackground: ColorConstants.secondaryDarkAppColor,
+        background: ColorConstants.DARK_SCAFFOLD_BACKGROUND,
+        cardBackground: ColorConstants.DARK_SCAFFOLD_BACKGROUND,
         primaryText: Colors.white,
         secondaryText: Colors.black,
-        accentColor: ColorConstants.secondaryDarkAppColor,
+        accentColor: ColorConstants.DARK_SCAFFOLD_BACKGROUND,
         divider: Colors.black45,
         buttonBackground: Colors.white,
-        buttonText: ColorConstants.secondaryDarkAppColor,
-        disabled: ColorConstants.secondaryDarkAppColor,
+        buttonText: ColorConstants.DARK_SCAFFOLD_BACKGROUND,
+        disabled: ColorConstants.SECONDARY_APP,
         error: Colors.red,
       );
 }

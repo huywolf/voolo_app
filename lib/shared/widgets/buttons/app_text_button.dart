@@ -23,7 +23,7 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       style: TextStyle(
-        color: textColor ?? ColorConstants.primary,
+        color: textColor ?? ColorConstants.PRIMARY,
         fontSize: fontSize ?? 16,
         fontWeight: FontWeight.w700,
       ),

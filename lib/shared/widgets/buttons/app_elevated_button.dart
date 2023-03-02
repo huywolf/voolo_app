@@ -44,7 +44,7 @@ class AppElevatedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius ?? 0),
         side: borderSide ?? BorderSide.none,
       ),
-      color: buttonBgColor ?? ColorConstants.primary,
+      color: buttonBgColor ?? ColorConstants.PRIMARY,
       disabledColor: disableButtonBgColor ?? const Color(0xffBABABA),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

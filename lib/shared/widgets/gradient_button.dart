@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voolo_app/shared/constants/app_textstyle.dart';
 
 import '../shared.dart';
 
@@ -52,7 +53,7 @@ class GradientButton extends StatelessWidget {
                     text,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: CommonConstants.normalText,
+                      fontSize: AppTextStyles.NORMAL_FS,
                       fontWeight: FontWeight.bold,
                     ),
                   )

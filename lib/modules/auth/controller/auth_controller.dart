@@ -75,7 +75,7 @@ class AuthController extends GetxController {
       // );
 
       final prefs = Get.find<SharedPreferences>();
-      prefs.setString(StorageConstants.phoneNumber, loginPhoneEmailController.text);
+      prefs.setString(StorageConstants.PHONE_NUMBER, loginPhoneEmailController.text);
       Get.toNamed(Routes.HOME);
       // if (res!.token.isNotEmpty) {
       //   prefs.setString(StorageConstants.token, res.token);

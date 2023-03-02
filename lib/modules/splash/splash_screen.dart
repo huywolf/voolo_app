@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Center(
-              child: Image.asset(Assets.vooloIcon),
+              child: Image.asset(Assets.VOOLO_ICON),
             ),
           )
         ],
