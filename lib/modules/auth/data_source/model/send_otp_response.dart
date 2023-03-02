@@ -1,19 +1,13 @@
-// ignore_for_file: depend_on_referenced_packages
+import 'package:voolo_app/dio/eap/dio_response.dart';
 
-import 'package:json_annotation/json_annotation.dart';
-
-part 'send_otp_response.g.dart';
-
-@JsonSerializable()
 class SendOtpResponse {
   final bool status;
   final String? message;
+  final StatusCode? statusCode;
 
   SendOtpResponse({
     this.status = false,
     this.message,
+    this.statusCode,
   });
-
-  factory SendOtpResponse.fromJson(Map<String, dynamic> json) => _$SendOtpResponseFromJson(json);
-  Map<String, dynamic> toJson() => _$SendOtpResponseToJson(this);
 }

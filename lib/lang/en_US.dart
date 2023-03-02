@@ -18,7 +18,20 @@ const Map<String, String> en_US = {
   'unlimited_shopping': "Unlimited\nshopping",
   'flexible_shopping': 'Flexible shopping\nfrom 1-4 months',
   'zero_interest': '0% interest',
+  'sign_up': 'Sign Up',
+  'sign_in': 'Sign In',
+  'full_name': 'Full name',
+  'phone_number': 'Phone number',
+  'email': 'Email',
+  'already_have_an_account': "Already have an account?",
 
   // Validate message
-  'invalid_otp': "Invalid OTP",
+  'invalid_otp': "OTP code is incorrect",
+  'please_enter_value': 'Please enter full name',
+  "name_not_include_special_character": "Name does not include special characters",
+  "name_not_include_number": "Name does not include number",
+  "invalid_phone_number_format": "Invalid phone number format",
+  "invalid_email_format": "Invalid email format",
+  'that_phone_number_is_taken': 'That phone number is taken. Try another.',
+  'that_email_is_taken': 'That email is taken. Try another.',
 };

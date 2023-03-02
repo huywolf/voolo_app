@@ -16,20 +16,32 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Stack(
-      children: [
-        Container(color: const Color(0xffEEEEEE)),
-        const BlurryContainer(),
-        Positioned(
-          top: 0,
-          right: 0,
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),
-            child: const SizedBox(),
-          ),
+    return Scaffold(
+      backgroundColor: const Color(0xffEEEEEE),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Image.asset(Assets.VOOLO_ICON, width: 165),
         ),
-        _buildMainContent(context),
-      ],
+        toolbarHeight: 60,
+      ),
+      body: Stack(
+        children: [
+          Container(color: const Color(0xffEEEEEE)),
+          const BlurryContainer(),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0),
+              child: const SizedBox(),
+            ),
+          ),
+          _buildMainContent(context),
+        ],
+      ),
     );
   }
 
@@ -37,9 +49,7 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 80),
-          Image.asset(Assets.VOOLO_ICON, width: 200),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           Text(
             "choose_your_language".tr,
             style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: AppTextStyles.MEDIUM_FS, fontFamily: "Montserrat"),

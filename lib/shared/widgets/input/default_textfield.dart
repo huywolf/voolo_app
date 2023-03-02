@@ -77,6 +77,8 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: widget.hintText,
             hintStyle: AppTextStyles.SMALL.copyWith(color: ColorConstants.GREY_TEXT),
+            errorText: widget.errorText,
+            errorMaxLines: 2,
           ),
           cursorColor: Colors.black,
           controller: widget.controller,

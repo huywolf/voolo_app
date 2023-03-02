@@ -7,7 +7,7 @@ import '../model/send_otp_response.dart';
 class AuthRepository {
   final api = AuthApi(DioClient.instance.dio);
 
-  Future<SendOtpResponse?> sendOTP({
+  Future<SendOtpResponse> sendOTP({
     required String fullName,
     required String phoneNumber,
     required String email,
@@ -21,10 +21,10 @@ class AuthRepository {
       if (res.status == true) {
         return SendOtpResponse(status: true);
       }
-      return SendOtpResponse(status: false, message: res.message);
+      return SendOtpResponse(status: false, message: res.message, statusCode: res.statusCode);
     } catch (err) {
       Logger().e('AuthRepository', err);
-      return null;
+      return SendOtpResponse(status: false);
     }
   }
 }

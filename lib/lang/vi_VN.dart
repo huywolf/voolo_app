@@ -18,7 +18,20 @@ const Map<String, String> vi_VN = {
   'unlimited_shopping': 'Mua sắm\nkhông giới hạn',
   'flexible_shopping': 'Mua sắm linh hoạt\ntừ 1-4 tháng',
   'zero_interest': 'Lãi suất 0%',
+  'sign_up': 'Đăng ký',
+  'sign_in': 'Đăng nhập',
+  'full_name': 'Họ và tên',
+  'phone_number': 'Số điện thoại',
+  'email': 'Email',
+  'already_have_an_account': "Bạn đã có tài khoản",
 
   // Validate message
-  'invalid_otp': "Mã OTP không hợp lệ",
+  'invalid_otp': "Mã OTP không chính xác",
+  'please_enter_value': 'Vui lòng nhập thông tin',
+  "name_not_include_special_character": "Tên không bao gồm ký tự đặc biệt",
+  "name_not_include_number": "Tên không bao gồm ký tự đặc biệt",
+  "invalid_phone_number_format": "Định dạng số điện thoại không hợp lệ",
+  "invalid_email_format": "Định dạng Email không hợp lệ",
+  'that_phone_number_is_taken': 'Số điện thoại đã được đăng ký tài khoản khác',
+  'that_email_is_taken': 'Email đã được đăng ký tài khoản khác',
 };

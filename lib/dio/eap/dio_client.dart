@@ -39,9 +39,9 @@ class DioClient {
             "appKey": AppConfig.appKey,
             "appID": AppConfig.appId,
           };
-          var ACCESS_TOKEN = Get.find<SharedPreferences>().getString(StorageConstants.ACCESS_TOKEN);
-          if (ACCESS_TOKEN != null) {
-            headers["Authorization"] = "Bearer $ACCESS_TOKEN";
+          var accessToken = Get.find<SharedPreferences>().getString(StorageConstants.ACCESS_TOKEN);
+          if (accessToken != null) {
+            headers["Authorization"] = "Bearer $accessToken";
           }
           // UtilLogger.logInfo('Access Token: $ACCESS_TOKEN');
           options.headers.addAll(headers);

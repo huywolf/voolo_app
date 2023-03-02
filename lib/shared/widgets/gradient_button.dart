@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
 
-import '../shared.dart';
-
 class GradientButton extends StatelessWidget {
   final String text;
   final Widget? child;

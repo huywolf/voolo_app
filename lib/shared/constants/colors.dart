@@ -18,7 +18,7 @@ class ColorConstants {
 
   static const Color GREY_BODER = Color(0xFFDADADA);
   static const Color GREY_TEXT = Color(0xFF9E9E9E);
-  static const Color GRAY_LIGHT = Color(0xFF9E9E9E);
+  static const Color GRAY_LIGHT = Color(0xFFDADADA);
 
   static const Color BLUE_LINK = Color(0xff197DDE);
 }
