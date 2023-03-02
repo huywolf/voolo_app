@@ -15,6 +15,9 @@ const Map<String, String> en_US = {
   'loading': "Loading...",
   'choose_your_language': "Choose your language",
   'continue': "Continue",
+  'unlimited_shopping': "Unlimited\nshopping",
+  'flexible_shopping': 'Flexible shopping\nfrom 1-4 months',
+  'zero_interest': '0% interest',
 
   // Validate message
   'invalid_otp': "Invalid OTP",

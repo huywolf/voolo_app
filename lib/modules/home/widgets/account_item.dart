@@ -35,7 +35,7 @@ class AccountItem extends StatelessWidget {
                 )),
                 const Icon(
                   Icons.chevron_right,
-                  color: ColorConstants.darkGray,
+                  color: ColorConstants.greyText,
                 ),
               ],
             ),

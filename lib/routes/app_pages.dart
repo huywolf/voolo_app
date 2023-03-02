@@ -1,6 +1,8 @@
 import 'package:voolo_app/modules/auth/auth_binding.dart';
 import 'package:voolo_app/modules/auth/view/auth_screen.dart';
 import 'package:voolo_app/modules/home/home.dart';
+import 'package:voolo_app/modules/introduction/introduction_binding.dart';
+import 'package:voolo_app/modules/introduction/introduction_screen.dart';
 import 'package:voolo_app/modules/select_language/select_language_binding.dart';
 import 'package:voolo_app/modules/select_language/select_language_screen.dart';
 import 'package:voolo_app/modules/splash/splash_binding.dart';
@@ -25,6 +27,11 @@ class AppPages {
       name: Routes.SELECT_LANGUAGE,
       page: () => const SelectLanguageScreen(),
       binding: SelectLanguageBinding(),
+    ),
+    GetPage(
+      name: Routes.INTRODUCTION,
+      page: () => const IntroductionScreen(),
+      binding: IntroductionBinding(),
     ),
     GetPage(
       name: Routes.AUTH,

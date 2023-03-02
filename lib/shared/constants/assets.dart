@@ -12,6 +12,9 @@ class Assets {
   static const String visibilityOff = imagePrefix + 'visibility_off.png';
   static const String vietnameseLang = imagePrefix + 'vietnamese_lang.png';
   static const String englishLang = imagePrefix + 'english_lang.png';
+  static const String introductionScreen1 = imagePrefix + 'introduction_screen_1.png';
+  static const String introductionScreen2 = imagePrefix + 'introduction_screen_2.png';
+  static const String introductionScreen3 = imagePrefix + 'introduction_screen_3.png';
 
   // Icons
   static const String botNavScan = iconPrefix + 'bot_nav_scan.png';
