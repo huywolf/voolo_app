@@ -77,4 +77,25 @@ class ValidateUtil {
     }
     return null;
   }
+
+  String? validatePhoneNumberOrEmail(String? value) {
+    if (value == null) return null;
+    if (value.isEmpty) {
+      return 'please_enter_value'.tr;
+    }
+    if (value.contains('@')) {
+      validateEmail(value);
+    } else {
+      validatePhoneNumber(value);
+    }
+    return null;
+  }
+
+  String? validatePassword(String? value) {
+    if (value == null) return null;
+    if (value.isEmpty) {
+      return 'please_enter_value'.tr;
+    }
+    return null;
+  }
 }

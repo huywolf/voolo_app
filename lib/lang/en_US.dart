@@ -23,7 +23,10 @@ const Map<String, String> en_US = {
   'full_name': 'Full name',
   'phone_number': 'Phone number',
   'email': 'Email',
-  'already_have_an_account': "Already have an account?",
+  'already_have_an_account': "Already have an account",
+  'do_not_have_an_account': "Do not have an account",
+  'phone_number_email': "Phone number/Email",
+  'forgot_password': 'Forgot password',
 
   // Validate message
   'invalid_otp': "OTP code is incorrect",
@@ -34,4 +37,5 @@ const Map<String, String> en_US = {
   "invalid_email_format": "Invalid email format",
   'that_phone_number_is_taken': 'That phone number is taken. Try another.',
   'that_email_is_taken': 'That email is taken. Try another.',
+  'incorrect_password': 'Incorrect password',
 };

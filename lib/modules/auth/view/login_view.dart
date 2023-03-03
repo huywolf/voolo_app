@@ -43,15 +43,15 @@ class LoginView extends GetView<AuthController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          "Bạn chưa có tài khoản?  ",
-                          style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
+                        Text(
+                          "${'do_not_have_an_account'.tr}?  ",
+                          style: const TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
                         ),
                         InkWell(
                           onTap: () => controller.switchView(1),
-                          child: const Text(
-                            "Đăng ký",
-                            style: TextStyle(
+                          child: Text(
+                            "sign_up".tr,
+                            style: const TextStyle(
                               color: ColorConstants.BLUE_LINK,
                               fontSize: 13,
                               fontWeight: FontWeight.w400,
@@ -75,9 +75,9 @@ class LoginView extends GetView<AuthController> {
     return Column(
       children: [
         const SizedBox(height: 100),
-        const Text(
-          "Đăng nhập",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
+        Text(
+          "sign_in".tr,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
         ),
         const SizedBox(height: 50),
         Padding(
@@ -88,33 +88,23 @@ class LoginView extends GetView<AuthController> {
               children: [
                 DefaultTextField(
                   controller: controller.loginPhoneEmailController,
-                  labelText: "Số điện thoại/Email",
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Vui lòng nhập số điện thoại/email.';
-                    }
-                    return null;
-                  },
+                  labelText: "phone_number_email".tr,
+                  validator: ValidateUtil().validatePhoneNumberOrEmail,
                 ),
                 const SizedBox(height: 20),
                 DefaultTextField(
                   controller: controller.loginPasswordController,
                   labelText: "Mật khẩu",
                   obscureText: true,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Vui lòng nhập mật khẩu.';
-                    }
-                    return null;
-                  },
+                  validator: ValidateUtil().validatePassword,
                 ),
                 const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [
+                  children: [
                     Text(
-                      "Quên mật khẩu?",
-                      style: TextStyle(color: Color(0xff197DDE), fontSize: 13, fontWeight: FontWeight.w400),
+                      "${'forgot_password'.tr}?",
+                      style: const TextStyle(color: Color(0xff197DDE), fontSize: 13, fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -125,7 +115,7 @@ class LoginView extends GetView<AuthController> {
                   },
                   buttonHeight: Dimension.K_BUTTON_HEIGHT,
                   radius: 30,
-                  text: "Đăng nhập",
+                  text: "sign_in".tr,
                   buttonBgColor: Colors.black,
                 ),
                 const SizedBox(height: 50),

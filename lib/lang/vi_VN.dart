@@ -24,6 +24,9 @@ const Map<String, String> vi_VN = {
   'phone_number': 'Số điện thoại',
   'email': 'Email',
   'already_have_an_account': "Bạn đã có tài khoản",
+  'do_not_have_an_account': "Bạn chưa có tài khoản",
+  'phone_number_email': "Số điện thoại/Email",
+  'forgot_password': 'Quên mật khẩu',
 
   // Validate message
   'invalid_otp': "Mã OTP không chính xác",
@@ -34,4 +37,5 @@ const Map<String, String> vi_VN = {
   "invalid_email_format": "Định dạng Email không hợp lệ",
   'that_phone_number_is_taken': 'Số điện thoại đã được đăng ký tài khoản khác',
   'that_email_is_taken': 'Email đã được đăng ký tài khoản khác',
+  'incorrect_password': 'Mật khẩu không chính xác',
 };
