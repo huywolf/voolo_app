@@ -85,7 +85,17 @@ class LoginView extends GetView<AuthController> {
           child: Form(
             key: controller.loginFormKey,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Obx(() => controller.loginErrorText.value != null
+                    ? Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          controller.loginErrorText.value!,
+                          style: const TextStyle(color: ColorConstants.RED_ERROR, fontSize: 14),
+                        ),
+                      )
+                    : const SizedBox()),
                 DefaultTextField(
                   controller: controller.loginPhoneEmailController,
                   labelText: "phone_number_email".tr,
@@ -94,7 +104,7 @@ class LoginView extends GetView<AuthController> {
                 const SizedBox(height: 20),
                 DefaultTextField(
                   controller: controller.loginPasswordController,
-                  labelText: "Mật khẩu",
+                  labelText: "password".tr,
                   obscureText: true,
                   validator: ValidateUtil().validatePassword,
                 ),

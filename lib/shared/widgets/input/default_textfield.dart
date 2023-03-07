@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
+import 'package:voolo_app/shared/constants/assets.dart';
 import 'package:voolo_app/shared/constants/colors.dart';
 
 class DefaultTextField extends StatefulWidget {
@@ -41,6 +43,7 @@ class DefaultTextField extends StatefulWidget {
 
 class _DefaultTextFieldState extends State<DefaultTextField> {
   bool? obscureText;
+  final double kIconPadding = 16;
 
   @override
   void initState() {
@@ -53,6 +56,28 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       borderSide: const BorderSide(color: ColorConstants.GREY_BODER),
       borderRadius: BorderRadius.circular(40),
     );
+  }
+
+  Widget? buildSuffixIcon() {
+    if (widget.obscureText) {
+      return GestureDetector(
+        dragStartBehavior: DragStartBehavior.down,
+        onTap: () {
+          setState(() {
+            obscureText = !obscureText!;
+          });
+        },
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: kIconPadding),
+          child: SizedBox(
+            height: kIconPadding,
+            width: kIconPadding,
+            child: obscureText! ? Image.asset(Assets.VISIBILITY_OFF) : Image.asset(Assets.VISIBILITY),
+          ),
+        ),
+      );
+    }
+    return const SizedBox();
   }
 
   @override
@@ -79,6 +104,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
             hintStyle: AppTextStyles.SMALL.copyWith(color: ColorConstants.GREY_TEXT),
             errorText: widget.errorText,
             errorMaxLines: 2,
+            suffixIcon: buildSuffixIcon(),
           ),
           cursorColor: Colors.black,
           controller: widget.controller,

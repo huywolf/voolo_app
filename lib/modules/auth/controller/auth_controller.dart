@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:voolo_app/dio/eap/dio_response.dart';
 import 'package:voolo_app/modules/verify_otp/controller/verify_otp_controller.dart';
 import 'package:voolo_app/routes/app_pages.dart';
+import 'package:voolo_app/shared/constants/server_error_code.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,6 +27,7 @@ class AuthController extends GetxController {
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final loginPhoneEmailController = TextEditingController();
   final loginPasswordController = TextEditingController();
+  final loginErrorText = Rxn<String>();
 
   // @override
   // void onInit() {
@@ -42,6 +44,8 @@ class AuthController extends GetxController {
     resetErrorText();
     if (index == 0) {
       resetRegisterTextController();
+    } else {
+      resetLoginTextController();
     }
   }
 
@@ -84,6 +88,7 @@ class AuthController extends GetxController {
   void resetErrorText() {
     phoneErrorText.value = null;
     emailErrorText.value = null;
+    loginErrorText.value = null;
   }
 
   void resetRegisterTextController() {
@@ -92,23 +97,34 @@ class AuthController extends GetxController {
     registerPhoneNumberController.clear();
   }
 
+  void resetLoginTextController() {
+    loginPhoneEmailController.clear();
+    loginPasswordController.clear();
+  }
+
   void login(BuildContext context) async {
     AppFocus.unfocus(context);
     if (loginFormKey.currentState!.validate()) {
-      // final res = await apiRepository.login(
-      //   LoginRequest(
-      //     email: loginPhoneEmailController.text,
-      //     password: loginPasswordController.text,
-      //   ),
-      // );
+      loginErrorText.value = null;
 
-      final prefs = Get.find<SharedPreferences>();
-      prefs.setString(StorageConstants.PHONE_NUMBER, loginPhoneEmailController.text);
-      Get.toNamed(Routes.HOME);
-      // if (res!.token.isNotEmpty) {
-      //   prefs.setString(StorageConstants.token, res.token);
-      //   Get.toNamed(Routes.HOME);
-      // }
+      EasyLoading.show(status: 'loading'.tr);
+      final res = await repo.login(
+        phoneOrEmail: loginPhoneEmailController.text,
+        password: loginPasswordController.text,
+      );
+      EasyLoading.dismiss();
+
+      if (res.status == false) {
+        loginErrorText.value = ServerErrorCode().convertStatusCodeToString(res.statusCode);
+      } else {
+        final prefs = Get.find<SharedPreferences>();
+        prefs.setString(StorageConstants.PHONE_NUMBER, loginPhoneEmailController.text);
+        Get.toNamed(Routes.HOME);
+        // if (res!.token.isNotEmpty) {
+        //   prefs.setString(StorageConstants.token, res.token);
+        //   Get.toNamed(Routes.HOME);
+        // }
+      }
     }
   }
 }

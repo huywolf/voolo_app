@@ -84,11 +84,9 @@ class ValidateUtil {
       return 'please_enter_value'.tr;
     }
     if (value.contains('@')) {
-      validateEmail(value);
-    } else {
-      validatePhoneNumber(value);
+      return validateEmail(value);
     }
-    return null;
+    return validatePhoneNumber(value);
   }
 
   String? validatePassword(String? value) {

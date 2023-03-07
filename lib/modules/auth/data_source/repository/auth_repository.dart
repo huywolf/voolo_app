@@ -2,6 +2,7 @@ import 'package:logger/logger.dart';
 import 'package:voolo_app/dio/eap/dio_client.dart';
 
 import '../api/auth_api.dart';
+import '../model/login_response.dart';
 import '../model/send_otp_response.dart';
 
 class AuthRepository {
@@ -25,6 +26,21 @@ class AuthRepository {
     } catch (err) {
       Logger().e('AuthRepository', err);
       return SendOtpResponse(status: false);
+    }
+  }
+
+  Future<LoginResponse> login({
+    required String phoneOrEmail,
+    required String password,
+  }) async {
+    try {
+      return await api.login({
+        "phone_email": phoneOrEmail,
+        "password": password,
+      });
+    } catch (err) {
+      Logger().e('AuthRepository', err);
+      return LoginResponse(status: false);
     }
   }
 }

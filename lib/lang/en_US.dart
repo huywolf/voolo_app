@@ -27,6 +27,7 @@ const Map<String, String> en_US = {
   'do_not_have_an_account': "Do not have an account",
   'phone_number_email': "Phone number/Email",
   'forgot_password': 'Forgot password',
+  'password': 'Password',
 
   // Validate message
   'invalid_otp': "OTP code is incorrect",
@@ -38,4 +39,5 @@ const Map<String, String> en_US = {
   'that_phone_number_is_taken': 'That phone number is taken. Try another.',
   'that_email_is_taken': 'That email is taken. Try another.',
   'incorrect_password': 'Incorrect password',
+  'account_do_not_exist': 'Account does not exist. Please register.',
 };
