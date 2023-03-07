@@ -42,15 +42,15 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(height: 120),
-                    const Text(
-                      "Nhập OTP",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
+                    Text(
+                      "enter_otp".tr,
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
                     ),
                     const SizedBox(height: 20),
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        text: 'Mã OTP đã được gửi đến email ',
+                        text: '${'otp_was_sent_to_email'.tr} ',
                         style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                         children: <TextSpan>[
                           TextSpan(
@@ -101,7 +101,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                         return Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
-                            "${controller.validateOtpError.value} (${controller.countFail.value}/5) ",
+                            controller.validateOtpError.value,
                             style: const TextStyle(color: ColorConstants.RED_ERROR, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                           ),
                         );
@@ -116,7 +116,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                           onPressed: () => controller.verifyOtp(),
                           buttonHeight: 40,
                           radius: 30,
-                          text: "Tiếp tục",
+                          text: "next".tr,
                           buttonBgColor: Colors.black,
                           disabled: !controller.enableNextButton.value,
                         ),
@@ -126,15 +126,15 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          "Không nhận được OTP? ",
-                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
+                        Text(
+                          "${'not_received_yet'.tr}? ",
+                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => controller.onPressResendOtp(),
                           child: Obx(
                             () => Text(
-                              "Gửi lại OTP (${controller.counter.value}s)",
+                              "${'resend_otp'.tr} (${controller.counter.value}s)",
                               style: const TextStyle(
                                 color: ColorConstants.BLUE_LINK,
                                 fontWeight: FontWeight.w400,
@@ -155,15 +155,15 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Bạn đã có tài khoản?  ",
-                    style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
+                  Text(
+                    "${'already_have_an_account'.tr}?  ",
+                    style: const TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w400),
                   ),
                   InkWell(
                     onTap: () => Get.offAndToNamed(Routes.AUTH),
-                    child: const Text(
-                      "Đăng nhập",
-                      style: TextStyle(
+                    child: Text(
+                      "sign_in".tr,
+                      style: const TextStyle(
                         color: ColorConstants.BLUE_LINK,
                         fontSize: 13,
                         fontWeight: FontWeight.w400,

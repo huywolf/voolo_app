@@ -7,7 +7,7 @@ import '../model/verify_otp_response.dart';
 class VerifyOtpRepository {
   final api = VerifyOtpApi(DioClient.instance.dio);
 
-  Future<VerifyOtpResponse?> verifyOtp({
+  Future<VerifyOtpResponse> verifyOtp({
     required String fullname,
     required String email,
     required String phoneNumber,
@@ -23,7 +23,7 @@ class VerifyOtpRepository {
       return res;
     } catch (err) {
       Logger().e('VerifyOtpRepository -> VerifyOtp()', err);
-      return null;
+      return VerifyOtpResponse(statusCode: 0);
     }
   }
 }

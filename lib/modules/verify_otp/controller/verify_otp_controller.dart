@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:voolo_app/modules/auth/data_source/repository/auth_repository.dart';
+import 'package:voolo_app/shared/constants/server_error_code.dart';
 
 import '../data_source/repository/verify_bnpl_repository.dart';
 
@@ -23,6 +25,7 @@ class VerifyOtpController extends GetxController {
   VerifyOtpController();
 
   final VerifyOtpRepository repo = VerifyOtpRepository();
+  final AuthRepository authRepo = AuthRepository();
   final VerifyOtpScreenArg screenArg = Get.arguments;
 
   late StreamController<ErrorAnimationType> errorController;
@@ -65,6 +68,11 @@ class VerifyOtpController extends GetxController {
   Future<void> onPressResendOtp() async {
     EasyLoading.show(status: 'loading'.tr);
     counter.value = 59;
+    await authRepo.sendOTP(
+      fullName: screenArg.fullName,
+      phoneNumber: screenArg.phoneNumber,
+      email: screenArg.email,
+    );
     EasyLoading.dismiss();
     startTimer();
   }
@@ -86,12 +94,21 @@ class VerifyOtpController extends GetxController {
       otp: textEditingController.text,
     );
     EasyLoading.dismiss();
-    if (res?.status == true) {
+    if (res.status == true) {
       // next step
     } else {
-      if (res?.statusCode == 1004) {
-        validateOtpError.value = 'invalid_otp'.tr;
+      if (res.statusCode == 1004) {
         countFail.value += 1;
+        validateOtpError.value = '${'invalid_otp'.tr} (${countFail.value}/5)';
+        return;
+      }
+      if (res.statusCode == 3000) {
+        validateOtpError.value = 'expired_otp'.tr;
+        return;
+      }
+      if (res.statusCode == 0) {
+        validateOtpError.value = 'default_error_msg'.tr;
+        return;
       }
     }
   }

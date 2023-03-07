@@ -28,8 +28,14 @@ const Map<String, String> vi_VN = {
   'phone_number_email': "Số điện thoại/Email",
   'forgot_password': 'Quên mật khẩu',
   'password': 'Mật khẩu',
+  'enter_otp': 'Nhập OTP',
+  'otp_was_sent_to_email': 'Mã OTP đã được gửi đến email',
+  'next': 'Tiếp tục',
+  'not_received_yet': 'Không nhận được OTP',
+  'resend_otp': 'Gửi lại OTP',
 
   // Validate message
+  'default_error_msg': 'Đã có lỗi xảy ra, vui lòng thử lại sau.',
   'invalid_otp': "Mã OTP không chính xác",
   'please_enter_value': 'Vui lòng nhập thông tin',
   "name_not_include_special_character": "Tên không bao gồm ký tự đặc biệt",
@@ -40,4 +46,5 @@ const Map<String, String> vi_VN = {
   'that_email_is_taken': 'Email đã được đăng ký tài khoản khác',
   'incorrect_password': 'Mật khẩu không chính xác',
   'account_do_not_exist': 'Tài khoản chưa tồn tại. Vui lòng đăng ký.',
+  'expired_otp': 'Mã OTP đã hết hạn.',
 };

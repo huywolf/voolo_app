@@ -7,10 +7,10 @@ part 'verify_otp_response.g.dart';
 @JsonSerializable()
 class VerifyOtpResponse {
   VerifyOtpResponse({
-    required this.status,
-    required this.message,
-    required this.statusCode,
-    required this.countFail,
+    this.status,
+    this.message,
+    this.statusCode,
+    this.countFail,
   });
 
   final bool? status;

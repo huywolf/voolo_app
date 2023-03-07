@@ -28,8 +28,14 @@ const Map<String, String> en_US = {
   'phone_number_email': "Phone number/Email",
   'forgot_password': 'Forgot password',
   'password': 'Password',
+  'enter_otp': 'Enter OTP',
+  'otp_was_sent_to_email': 'OTP was sent to email',
+  'next': 'Next',
+  'not_received_yet': 'Not received yet',
+  'resend_otp': 'Resend OTP',
 
   // Validate message
+  'default_error_msg': 'An error occurred, please try again later.',
   'invalid_otp': "OTP code is incorrect",
   'please_enter_value': 'Please enter full name',
   "name_not_include_special_character": "Name does not include special characters",
@@ -40,4 +46,5 @@ const Map<String, String> en_US = {
   'that_email_is_taken': 'That email is taken. Try another.',
   'incorrect_password': 'Incorrect password',
   'account_do_not_exist': 'Account does not exist. Please register.',
+  'expired_otp': 'Expired OTP.',
 };
