@@ -5,6 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voolo_app/app_config.dart';
 import 'package:voolo_app/shared/shared.dart';
 
+import 'dio_response.dart';
+
 class DioClient {
   static final instance = DioClient._();
 

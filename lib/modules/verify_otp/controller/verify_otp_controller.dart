@@ -5,6 +5,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:voolo_app/modules/auth/data_source/repository/auth_repository.dart';
+import 'package:voolo_app/modules/create_password/controller/create_password_controller.dart';
+import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/server_error_code.dart';
 
 import '../data_source/repository/verify_bnpl_repository.dart';
@@ -95,7 +97,12 @@ class VerifyOtpController extends GetxController {
     );
     EasyLoading.dismiss();
     if (res.status == true) {
-      // next step
+      Get.offAndToNamed(Routes.CREATE_PASSWORD,
+          arguments: CreatePasswordScreenArg(
+            fullName: screenArg.fullName,
+            email: screenArg.email,
+            phoneNumber: screenArg.phoneNumber,
+          ));
     } else {
       if (res.statusCode == 1004) {
         countFail.value += 1;

@@ -1,3 +1,5 @@
+// ignore_for_file: overridden_fields
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,7 @@ import 'msg_box.dart';
 
 class SendMsgBox extends MsgBox {
   final String message;
+  // ignore: annotate_overrides
   final AnimationController animationController;
   const SendMsgBox({Key? key, required this.message, required this.animationController}) : super(key: key, animationController: animationController);
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:voolo_app/dio/eap/dio_response.dart';
 import 'package:voolo_app/modules/verify_otp/controller/verify_otp_controller.dart';
 import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/server_error_code.dart';
@@ -21,8 +20,7 @@ class AuthController extends GetxController {
   final registerFullNameController = TextEditingController();
   final registerEmailController = TextEditingController();
   final registerPhoneNumberController = TextEditingController();
-  final phoneErrorText = Rxn<String>();
-  final emailErrorText = Rxn<String>();
+  final registerErrorText = Rxn<String>();
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final loginPhoneEmailController = TextEditingController();
@@ -72,22 +70,13 @@ class AuthController extends GetxController {
           ),
         );
       } else {
-        switch (res.statusCode) {
-          case StatusCode.PHONE_NUMBER_ALREADY_EXIST:
-            phoneErrorText.value = 'that_phone_number_is_taken'.tr;
-            break;
-          case StatusCode.EMAIL_ALREADY_EXIST:
-            emailErrorText.value = 'that_email_is_taken'.tr;
-            break;
-          default:
-        }
+        registerErrorText.value = ServerErrorCode().convertStatusCodeToMessage(res.statusCode);
       }
     }
   }
 
   void resetErrorText() {
-    phoneErrorText.value = null;
-    emailErrorText.value = null;
+    registerErrorText.value = null;
     loginErrorText.value = null;
   }
 
@@ -115,7 +104,7 @@ class AuthController extends GetxController {
       EasyLoading.dismiss();
 
       if (res.status == false) {
-        loginErrorText.value = ServerErrorCode().convertStatusCodeToString(res.statusCode);
+        loginErrorText.value = ServerErrorCode().convertStatusCodeToMessage(res.statusCode);
       } else {
         final prefs = Get.find<SharedPreferences>();
         prefs.setString(StorageConstants.PHONE_NUMBER, loginPhoneEmailController.text);

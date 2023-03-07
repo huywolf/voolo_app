@@ -8,6 +8,7 @@ abstract class Routes {
   static const INTRODUCTION = '/introduction';
   static const AUTH = '/auth';
   static const VERIFY_OTP = '/verify_otp';
+  static const CREATE_PASSWORD = '/create_password';
   static const HOME = '/home';
   static const VERIFY_BNPL = '/verify_bnpl';
 }

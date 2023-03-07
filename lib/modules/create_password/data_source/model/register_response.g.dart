@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dio_response.dart';
+part of 'register_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-DioResponse _$DioResponseFromJson(Map<String, dynamic> json) => DioResponse(
+RegisterResponse _$RegisterResponseFromJson(Map<String, dynamic> json) =>
+    RegisterResponse(
       status: json['status'] as bool?,
-      statusCode: json['statusCode'] as int?,
-      errorCode: json['errorCode'] as int?,
       message: json['message'] as String?,
+      statusCode: json['statusCode'] as int?,
     );
 
-Map<String, dynamic> _$DioResponseToJson(DioResponse instance) =>
+Map<String, dynamic> _$RegisterResponseToJson(RegisterResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'statusCode': instance.statusCode,
-      'errorCode': instance.errorCode,
       'message': instance.message,
     };

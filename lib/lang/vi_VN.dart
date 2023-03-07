@@ -47,4 +47,6 @@ const Map<String, String> vi_VN = {
   'incorrect_password': 'Mật khẩu không chính xác',
   'account_do_not_exist': 'Tài khoản chưa tồn tại. Vui lòng đăng ký.',
   'expired_otp': 'Mã OTP đã hết hạn.',
+  'email_too_short': 'Email quá ngắn (độ dài email tối thiểu là 3 ký tự).',
+  'invalid_email': 'Email không hợp lệ.',
 };

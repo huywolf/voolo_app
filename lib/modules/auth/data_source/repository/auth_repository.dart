@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:voolo_app/dio/eap/dio_client.dart';
+import 'package:voolo_app/shared/constants/server_error_code.dart';
 
 import '../api/auth_api.dart';
 import '../model/login_response.dart';
@@ -22,7 +23,8 @@ class AuthRepository {
       if (res.status == true) {
         return SendOtpResponse(status: true);
       }
-      return SendOtpResponse(status: false, message: res.message, statusCode: res.statusCode);
+      final resCode = res.statusCode ?? res.errorCode;
+      return SendOtpResponse(status: false, message: res.message, statusCode: resCode);
     } catch (err) {
       Logger().e('AuthRepository', err);
       return SendOtpResponse(status: false);

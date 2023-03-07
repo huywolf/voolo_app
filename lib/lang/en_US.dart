@@ -47,4 +47,6 @@ const Map<String, String> en_US = {
   'incorrect_password': 'Incorrect password',
   'account_do_not_exist': 'Account does not exist. Please register.',
   'expired_otp': 'Expired OTP.',
+  'email_too_short': 'Email too short (minimum email length is 3 characters).',
+  'invalid_email': 'Invalid emal.',
 };

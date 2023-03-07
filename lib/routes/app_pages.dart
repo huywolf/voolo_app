@@ -1,5 +1,7 @@
 import 'package:voolo_app/modules/auth/auth_binding.dart';
 import 'package:voolo_app/modules/auth/view/auth_screen.dart';
+import 'package:voolo_app/modules/create_password/create_password_binding.dart';
+import 'package:voolo_app/modules/create_password/view/create_password_screen.dart';
 import 'package:voolo_app/modules/home/home.dart';
 import 'package:voolo_app/modules/introduction/introduction_binding.dart';
 import 'package:voolo_app/modules/introduction/introduction_screen.dart';
@@ -42,6 +44,11 @@ class AppPages {
       name: Routes.VERIFY_OTP,
       page: () => const VerifyOtpScreen(),
       binding: VerifyOtpBinding(),
+    ),
+    GetPage(
+      name: Routes.CREATE_PASSWORD,
+      page: () => const CreatePasswordScreen(),
+      binding: CreatePasswordBinding(),
     ),
     GetPage(
       name: Routes.HOME,

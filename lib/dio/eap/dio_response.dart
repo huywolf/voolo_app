@@ -4,25 +4,21 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'dio_response.g.dart';
 
-enum StatusCode {
-  @JsonValue(2010)
-  PHONE_NUMBER_ALREADY_EXIST,
-  @JsonValue(2011)
-  EMAIL_ALREADY_EXIST,
-}
-
 @JsonSerializable(genericArgumentFactories: true)
 class DioResponse {
   @JsonKey(name: 'status')
   final bool? status;
   @JsonKey(name: 'statusCode')
-  final StatusCode? statusCode;
+  final int? statusCode;
+  @JsonKey(name: 'errorCode')
+  final int? errorCode;
   @JsonKey(name: 'message')
   final String? message;
 
   DioResponse({
     this.status,
     this.statusCode,
+    this.errorCode,
     this.message,
   });
 

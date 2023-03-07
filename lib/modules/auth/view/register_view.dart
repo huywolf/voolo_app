@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:voolo_app/shared/constants/app_textstyle.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:get/get.dart';
 import 'package:voolo_app/shared/widgets/buttons/app_elevated_button.dart';
@@ -79,26 +80,34 @@ class RegisterView extends GetView<AuthController> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 45),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Obx(() => controller.registerErrorText.value != null
+                      ? Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Text(
+                            controller.registerErrorText.value!,
+                            style: const TextStyle(fontSize: AppTextStyles.SMALL_FS, color: ColorConstants.RED_ERROR),
+                          ),
+                        )
+                      : const SizedBox()),
                   DefaultTextField(
                     controller: controller.registerFullNameController,
                     labelText: "full_name".tr,
                     validator: ValidateUtil().validateFullName,
                   ),
                   const SizedBox(height: 20),
-                  Obx(() => DefaultTextField(
-                        controller: controller.registerPhoneNumberController,
-                        labelText: "phone_number".tr,
-                        validator: ValidateUtil().validatePhoneNumber,
-                        errorText: controller.phoneErrorText.value,
-                      )),
+                  DefaultTextField(
+                    controller: controller.registerPhoneNumberController,
+                    labelText: "phone_number".tr,
+                    validator: ValidateUtil().validatePhoneNumber,
+                  ),
                   const SizedBox(height: 20),
-                  Obx(() => DefaultTextField(
-                        controller: controller.registerEmailController,
-                        labelText: "email".tr,
-                        validator: ValidateUtil().validateEmail,
-                        errorText: controller.emailErrorText.value,
-                      )),
+                  DefaultTextField(
+                    controller: controller.registerEmailController,
+                    labelText: "email".tr,
+                    validator: ValidateUtil().validateEmail,
+                  ),
                   const SizedBox(height: 60),
                   AppElevatedButton(
                     onPressed: () => controller.register(context),
