@@ -72,9 +72,9 @@ class HomeScreen extends GetView<HomeController> {
                               child: Text(
                                 tabTitle[index],
                                 maxLines: 1,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 12,
-                                  color: Color(0xffA1A1A1),
+                                  color: isActive ? const Color(0xFF505050) : const Color(0xffA1A1A1),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -83,7 +83,8 @@ class HomeScreen extends GetView<HomeController> {
                         : AutoSizeText(
                             tabTitle[index],
                             maxLines: 1,
-                            style: const TextStyle(fontSize: 12, color: Color(0xffA1A1A1), fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                                fontSize: 12, color: isActive ? const Color(0xFF505050) : const Color(0xffA1A1A1), fontWeight: FontWeight.w500),
                           )
                   ],
                 );

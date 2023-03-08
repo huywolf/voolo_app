@@ -46,56 +46,50 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
   }
 
   Widget _buildMainContent(BuildContext context) {
-    return SingleChildScrollView(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 60),
           Text(
             "choose_language".tr,
             style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: AppTextStyles.MIDLE_LARGE_FS, fontFamily: 'Roboto'),
           ),
           const SizedBox(height: 30),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Obx(() => _buildLanguageBtn(
-                            type: LanguageType.vietnamese,
-                            lable: 'vietnamese'.tr,
-                            asset: Assets.VIETNAMESE_LANG,
-                            isSelected: controller.curLanguageType.value == LanguageType.vietnamese,
-                          )),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Obx(() => _buildLanguageBtn(
-                            type: LanguageType.english,
-                            lable: 'english'.tr,
-                            asset: Assets.ENGLISH_LANG,
-                            isSelected: controller.curLanguageType.value == LanguageType.english,
-                          )),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 30),
-                SizedBox(
-                  width: 200,
-                  child: Obx(() => AppElevatedButton(
-                        onPressed: () => controller.onPressNextButton(),
-                        buttonHeight: 45,
-                        radius: 30,
-                        text: "continue".tr,
-                        buttonBgColor: Colors.black,
-                        disabled: controller.curLanguageType.value == LanguageType.none,
-                      )),
-                ),
-                const SizedBox(height: 50),
-              ],
-            ),
-          )
+          Row(
+            children: [
+              Expanded(
+                child: Obx(() => _buildLanguageBtn(
+                      type: LanguageType.vietnamese,
+                      lable: 'vietnamese'.tr,
+                      asset: Assets.VIETNAMESE_LANG,
+                      isSelected: controller.curLanguageType.value == LanguageType.vietnamese,
+                    )),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Obx(() => _buildLanguageBtn(
+                      type: LanguageType.english,
+                      lable: 'english'.tr,
+                      asset: Assets.ENGLISH_LANG,
+                      isSelected: controller.curLanguageType.value == LanguageType.english,
+                    )),
+              ),
+            ],
+          ),
+          const SizedBox(height: 30),
+          SizedBox(
+            width: 200,
+            child: Obx(() => AppElevatedButton(
+                  onPressed: () => controller.onPressNextButton(),
+                  buttonHeight: 45,
+                  radius: 30,
+                  text: "continue".tr,
+                  buttonBgColor: Colors.black,
+                  disabled: controller.curLanguageType.value == LanguageType.none,
+                )),
+          ),
+          const SizedBox(height: 100),
         ],
       ),
     );
