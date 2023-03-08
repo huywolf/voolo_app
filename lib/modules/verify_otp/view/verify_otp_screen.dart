@@ -22,7 +22,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Container(
-        decoration: const BoxDecoration(color: Color(0xFFF3F3F3)),
+        decoration: const BoxDecoration(color: ColorConstants.LIGHT_GREY_SCAFFOLD_BACKGROUND),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [

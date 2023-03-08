@@ -13,6 +13,12 @@ class AppTextStyles {
   static const double MIDLE_LARGE_FS = 23;
   static const double EXTRA_LARGE_FS = 35;
 
+  static const TextStyle APP_BAR_TITLE = TextStyle(
+    color: ColorConstants.BLACK_TEXT,
+    fontSize: AppTextStyles.MIDLE_LARGE_FS,
+    fontWeight: FontWeight.w600,
+  );
+
   static const TextStyle SMALL = TextStyle(
     color: ColorConstants.BLACK_TEXT,
     fontSize: AppTextStyles.SMALL_FS,

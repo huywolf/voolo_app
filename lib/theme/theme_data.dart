@@ -43,7 +43,7 @@ class ThemeConfig {
       ),
       toggleableActiveColor: accentColor,
       appBarTheme: AppBarTheme(
-        color: cardBackground,
+        color: Colors.white,
         iconTheme: IconThemeData(
           color: secondaryText,
         ),

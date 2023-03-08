@@ -21,10 +21,10 @@ class LoginView extends GetView<AuthController> {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: Scaffold(
-          backgroundColor: const Color(0xFFF3F3F3),
+          backgroundColor: ColorConstants.LIGHT_GREY_SCAFFOLD_BACKGROUND,
           body: SingleChildScrollView(
             child: SizedBox(
-              height: SizeConfig().screenHeight,
+              height: Get.height,
               child: Stack(
                 alignment: Alignment.topCenter,
                 children: [

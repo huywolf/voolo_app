@@ -30,9 +30,17 @@ class Assets {
   static const String BOT_NAV_HISTORY_ACTIVE = ICON_PREFIX + 'bot_nav_history_active.png';
   static const String BOT_NAV_PROMO_ACTIVE = ICON_PREFIX + 'bot_nav_promo_active.png';
   static const String BOT_NAV_ACCOUNT_ACTIVE = ICON_PREFIX + 'bot_nav_account_active.png';
+  static const String ACC_BNPL_ACCOUNT = ICON_PREFIX + 'acc_bnpl_account.png';
+  static const String ACC_PERSON = ICON_PREFIX + 'acc_person.png';
+  static const String ACC_SETTING = ICON_PREFIX + 'acc_setting.png';
+  static const String ACC_STAR = ICON_PREFIX + 'acc_star.png';
+  static const String ACC_LOGOUT = ICON_PREFIX + 'acc_logout.png';
+  static const String ACC_QUESTION = ICON_PREFIX + 'acc_question.png';
+  static const String ARROW_RIGHT = ICON_PREFIX + 'arrow_right.png';
 
   // Svg image
   static const String ICON_VOOLO_LOGO = SVG_PREFIX + 'icon_voolo_logo.svg';
   static const String ICON_SUCCESS = SVG_PREFIX + 'icon_success.svg';
   static const String ICON_UNSUCCESS = SVG_PREFIX + 'icon_unsucess.svg';
+  static const String ICON_NOTIFICATION = SVG_PREFIX + 'icon_notification.svg';
 }

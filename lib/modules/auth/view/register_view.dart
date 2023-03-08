@@ -17,7 +17,7 @@ class RegisterView extends GetView<AuthController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(color: Color(0xFFF3F3F3)),
+        decoration: const BoxDecoration(color: ColorConstants.LIGHT_GREY_SCAFFOLD_BACKGROUND),
         child: SingleChildScrollView(
           child: Stack(
             alignment: Alignment.topCenter,
@@ -68,7 +68,7 @@ class RegisterView extends GetView<AuthController> {
     return Form(
       key: controller.registerFormKey,
       child: SizedBox(
-        height: SizeConfig().screenHeight,
+        height: Get.height,
         child: Column(
           children: [
             const SizedBox(height: 100),
