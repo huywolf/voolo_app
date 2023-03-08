@@ -49,38 +49,49 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(height: 20),
-          Text(
-            "choose_your_language".tr,
-            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: AppTextStyles.MEDIUM_FS, fontFamily: "Montserrat"),
-          ),
           const SizedBox(height: 60),
+          Text(
+            "choose_language".tr,
+            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: AppTextStyles.MIDLE_LARGE_FS, fontFamily: 'Roboto'),
+          ),
+          const SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                Obx(() => _buildLanguageBtn(
-                      type: LanguageType.vietnamese,
-                      lable: 'vietnamese'.tr,
-                      asset: Assets.VIETNAMESE_LANG,
-                      isSelected: controller.curLanguageType.value == LanguageType.vietnamese,
-                    )),
-                const SizedBox(height: 20),
-                Obx(() => _buildLanguageBtn(
-                      type: LanguageType.english,
-                      lable: 'english'.tr,
-                      asset: Assets.ENGLISH_LANG,
-                      isSelected: controller.curLanguageType.value == LanguageType.english,
-                    )),
-                const SizedBox(height: 50),
-                Obx(() => AppElevatedButton(
-                      onPressed: () => controller.onPressNextButton(),
-                      buttonHeight: 45,
-                      radius: 30,
-                      text: "continue".tr,
-                      buttonBgColor: Colors.black,
-                      disabled: controller.curLanguageType.value == LanguageType.none,
-                    )),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Obx(() => _buildLanguageBtn(
+                            type: LanguageType.vietnamese,
+                            lable: 'vietnamese'.tr,
+                            asset: Assets.VIETNAMESE_LANG,
+                            isSelected: controller.curLanguageType.value == LanguageType.vietnamese,
+                          )),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Obx(() => _buildLanguageBtn(
+                            type: LanguageType.english,
+                            lable: 'english'.tr,
+                            asset: Assets.ENGLISH_LANG,
+                            isSelected: controller.curLanguageType.value == LanguageType.english,
+                          )),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 30),
+                SizedBox(
+                  width: 200,
+                  child: Obx(() => AppElevatedButton(
+                        onPressed: () => controller.onPressNextButton(),
+                        buttonHeight: 45,
+                        radius: 30,
+                        text: "continue".tr,
+                        buttonBgColor: Colors.black,
+                        disabled: controller.curLanguageType.value == LanguageType.none,
+                      )),
+                ),
                 const SizedBox(height: 50),
               ],
             ),
@@ -99,18 +110,19 @@ class SelectLanguageScreen extends GetView<SelectLanguageController> {
     return InkWell(
       onTap: () => controller.chooseLanguage(type),
       child: Container(
-        height: 60,
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        height: 50,
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xffDADADA) : Colors.white,
+          color: isSelected ? Colors.black : Colors.white,
           border: Border.all(color: ColorConstants.GREY_BODER),
           borderRadius: BorderRadius.circular(34),
         ),
         child: Row(
           children: [
-            Text(lable, style: AppTextStyles.NORMAL),
-            const Expanded(child: SizedBox()),
             Image.asset(asset, height: 45),
+            const SizedBox(width: 10),
+            Text(lable,
+                style: TextStyle(color: isSelected ? Colors.white : Colors.black, fontSize: AppTextStyles.NORMAL_FS, fontWeight: FontWeight.w600)),
           ],
         ),
       ),
