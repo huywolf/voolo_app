@@ -94,6 +94,29 @@ class ValidateUtil {
     if (value.isEmpty) {
       return 'please_enter_value'.tr;
     }
+    if (!value.contains(RegExp(r'[0-9]')) || !value.contains(RegExp(r'[A-Z]')) || !value.contains(RegExp(r'[a-z]'))) {
+      return 'invalid_password'.tr;
+    }
+    if (value.length < 6) {
+      return 'invalid_password'.tr;
+    }
+    return null;
+  }
+
+  String? validateConfirmPassword(String? value, String password) {
+    if (value == null) return null;
+    if (value.isEmpty) {
+      return 'please_enter_value'.tr;
+    }
+    if (!value.contains(RegExp(r'[0-9]')) || !value.contains(RegExp(r'[A-Z]')) || !value.contains(RegExp(r'[a-z]'))) {
+      return 'invalid_password'.tr;
+    }
+    if (value.length < 6) {
+      return 'invalid_password'.tr;
+    }
+    if (value != password) {
+      return 'password_do_not_match'.tr;
+    }
     return null;
   }
 }

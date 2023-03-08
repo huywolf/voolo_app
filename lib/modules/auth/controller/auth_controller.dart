@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:jwt_decode/jwt_decode.dart';
 import 'package:voolo_app/modules/verify_otp/controller/verify_otp_controller.dart';
 import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/server_error_code.dart';
@@ -106,13 +107,18 @@ class AuthController extends GetxController {
       if (res.status == false) {
         loginErrorText.value = ServerErrorCode().convertStatusCodeToMessage(res.statusCode);
       } else {
-        final prefs = Get.find<SharedPreferences>();
-        prefs.setString(StorageConstants.PHONE_NUMBER, loginPhoneEmailController.text);
+        if (res.token != null && res.token!.isNotEmpty) {
+          final prefs = Get.find<SharedPreferences>();
+          Map<String, dynamic> payload = Jwt.parseJwt(res.token!);
+          prefs.setString(StorageConstants.ACCESS_TOKEN, res.token!);
+          if (payload.containsKey('email')) {
+            prefs.setString(StorageConstants.EMAIL, res.token!);
+          }
+          if (payload.containsKey('phone')) {
+            prefs.setString(StorageConstants.EMAIL, res.token!);
+          }
+        }
         Get.toNamed(Routes.HOME);
-        // if (res!.token.isNotEmpty) {
-        //   prefs.setString(StorageConstants.token, res.token);
-        //   Get.toNamed(Routes.HOME);
-        // }
       }
     }
   }

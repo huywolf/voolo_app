@@ -17,6 +17,8 @@ class Assets {
   static const String INTRODUCTION_SCREEN_1 = IMAGE_PREFIX + 'introduction_screen_1.png';
   static const String INTRODUCTION_SCREEN_2 = IMAGE_PREFIX + 'introduction_screen_2.png';
   static const String INTRODUCTION_SCREEN_3 = IMAGE_PREFIX + 'introduction_screen_3.png';
+  // static const String SUCCESS_DIALOG = IMAGE_PREFIX + 'success_dialog.png';
+  // static const String UNSUCCESS_DIALOG = IMAGE_PREFIX + 'unsucess_dialog.png';
 
   // Icons
   static const String BOT_NAV_SCAN = ICON_PREFIX + 'bot_nav_scan.png';
@@ -31,4 +33,6 @@ class Assets {
 
   // Svg image
   static const String ICON_VOOLO_LOGO = SVG_PREFIX + 'icon_voolo_logo.svg';
+  static const String ICON_SUCCESS = SVG_PREFIX + 'icon_success.svg';
+  static const String ICON_UNSUCCESS = SVG_PREFIX + 'icon_unsucess.svg';
 }

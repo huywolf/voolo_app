@@ -12,6 +12,10 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String?,
       statusCode: json['statusCode'] as int?,
       countFail: json['countFail'] as int?,
+      data: json['data'] == null
+          ? null
+          : LoginResponseData.fromJson(json['data'] as Map<String, dynamic>),
+      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
@@ -20,4 +24,22 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
       'message': instance.message,
       'statusCode': instance.statusCode,
       'countFail': instance.countFail,
+      'data': instance.data,
+      'token': instance.token,
+    };
+
+LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>
+    LoginResponseData(
+      isBNPL: json['isBNPL'] as bool?,
+      verifyEmail: json['verifyEmail'] as bool?,
+      verifyPhone: json['verifyPhone'] as bool?,
+      refreshToken: json['refreshToken'] as String?,
+    );
+
+Map<String, dynamic> _$LoginResponseDataToJson(LoginResponseData instance) =>
+    <String, dynamic>{
+      'isBNPL': instance.isBNPL,
+      'verifyEmail': instance.verifyEmail,
+      'verifyPhone': instance.verifyPhone,
+      'refreshToken': instance.refreshToken,
     };

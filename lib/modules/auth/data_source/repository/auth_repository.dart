@@ -1,6 +1,5 @@
 import 'package:logger/logger.dart';
 import 'package:voolo_app/dio/eap/dio_client.dart';
-import 'package:voolo_app/shared/constants/server_error_code.dart';
 
 import '../api/auth_api.dart';
 import '../model/login_response.dart';
