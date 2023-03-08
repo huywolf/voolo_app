@@ -46,12 +46,12 @@ class CreatePasswordScreen extends GetView<CreatePasswordController> {
           children: [
             const SizedBox(height: 120),
             Text(
-              "Tạo mật khẩu",
+              "create_password".tr,
               style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 28),
             ),
             const SizedBox(height: 10),
             Text(
-              'Mật khẩu tối thiểu 6 ký tự, 1 ký tự hoa, 1 ký tự số',
+              'password_must_be_6_character'.tr,
               style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
               textAlign: TextAlign.center,
             ),

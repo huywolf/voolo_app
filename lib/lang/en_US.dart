@@ -35,6 +35,8 @@ const Map<String, String> en_US = {
   'resend_otp': 'Resend OTP',
   'you_have_successfully_registered': 'You have successfully registered',
   'system_automatically_login': 'The system automatically logs in after 5s.',
+  'create_password': 'Create password',
+  'password_must_be_6_character': 'Password must be at least 6 characters, 1 uppercase letter, 1 number character',
 
   // Validate message
   'default_error_msg': 'An error occurred, please try again later.',

@@ -35,6 +35,8 @@ const Map<String, String> vi_VN = {
   'resend_otp': 'Gửi lại OTP',
   'you_have_successfully_registered': 'Bạn đã đăng ký thành công',
   'system_automatically_login': 'Hệ thống tự động đăng nhập sau  5s.',
+  'create_password': 'Tạo mật khẩu',
+  'password_must_be_6_character': 'Mật khẩu tối thiểu 6 ký tự, 1 ký tự hoa, 1 ký tự số',
 
   // Validate message
   'default_error_msg': 'Đã có lỗi xảy ra, vui lòng thử lại sau.',

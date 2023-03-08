@@ -31,21 +31,7 @@ class HomeController extends GetxController {
   void signout() {
     var prefs = Get.find<SharedPreferences>();
     prefs.clear();
-    // NavigatorHelper.popLastScreens(popCount: 2);
-
     Get.offAllNamed(Routes.AUTH);
-  }
-
-  void _saveUserInfo(UsersResponse users) {
-    var random = Random();
-    var index = random.nextInt(users.data!.length);
-    user.value = users.data![index];
-    var prefs = Get.find<SharedPreferences>();
-    // prefs.setString(StorageConstants.userInfo, users.data![index].toRawJson());
-
-    // var userInfo = prefs.getString(StorageConstants.userInfo);
-    // var userInfoObj = Datum.fromRawJson(xx!);
-    // print(userInfoObj);
   }
 
   void switchTab(int index) {
