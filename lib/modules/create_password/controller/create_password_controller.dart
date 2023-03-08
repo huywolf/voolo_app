@@ -9,7 +9,6 @@ import 'package:voolo_app/modules/auth/data_source/repository/auth_repository.da
 import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/server_error_code.dart';
 import 'package:voolo_app/shared/shared.dart';
-import 'package:voolo_app/shared/utils/utils.dart';
 import 'package:voolo_app/shared/widgets/dialogs/success_alert_dialog.dart';
 import 'package:voolo_app/shared/widgets/dialogs/unsuccess_alert_dialog.dart';
 

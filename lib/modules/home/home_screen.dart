@@ -23,15 +23,14 @@ class HomeScreen extends GetView<HomeController> {
     Assets.BOT_NAV_ACCOUNT_ACTIVE,
   ];
 
-  final tabTitle = <String>[
-    'home'.tr,
-    'history'.tr,
-    'promo'.tr,
-    'account'.tr,
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final tabTitle = <String>[
+      'home'.tr,
+      'history'.tr,
+      'promo'.tr,
+      'account'.tr,
+    ];
     return WillPopScope(
       onWillPop: () async => false,
       child: Obx(() => Scaffold(

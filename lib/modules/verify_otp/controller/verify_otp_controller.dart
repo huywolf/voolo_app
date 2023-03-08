@@ -7,7 +7,6 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:voolo_app/modules/auth/data_source/repository/auth_repository.dart';
 import 'package:voolo_app/modules/create_password/controller/create_password_controller.dart';
 import 'package:voolo_app/routes/app_pages.dart';
-import 'package:voolo_app/shared/constants/server_error_code.dart';
 
 import '../data_source/repository/verify_bnpl_repository.dart';
 

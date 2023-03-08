@@ -8,6 +8,7 @@ class ColorConstants {
   static const Color LIGHT_SCAFFOLD_BACKGROUND = Color(0xffffffff);
   static const Color DARK_SCAFFOLD_BACKGROUND = Color(0xff2F2E2E);
   static const Color GREY_SCAFFOLD_BACKGROUND = Color(0xffEEEEEE);
+  static const Color LIGHT_GREY_SCAFFOLD_BACKGROUND = Color(0xffF3F3F3);
 
   static const Color PRIMARY = Color(0xffCE53AD);
   static const Color SECONDARY_APP = Color(0xffCE53AD);

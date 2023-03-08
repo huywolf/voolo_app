@@ -17,8 +17,8 @@ class Assets {
   static const String INTRODUCTION_SCREEN_1 = IMAGE_PREFIX + 'introduction_screen_1.png';
   static const String INTRODUCTION_SCREEN_2 = IMAGE_PREFIX + 'introduction_screen_2.png';
   static const String INTRODUCTION_SCREEN_3 = IMAGE_PREFIX + 'introduction_screen_3.png';
-  // static const String SUCCESS_DIALOG = IMAGE_PREFIX + 'success_dialog.png';
-  // static const String UNSUCCESS_DIALOG = IMAGE_PREFIX + 'unsucess_dialog.png';
+  static const String HOME_SCREEN_FIRST = IMAGE_PREFIX + 'HOME_SCREEN_FIRST.png';
+  static const String HOME_SCREEN_TWO = IMAGE_PREFIX + 'HOME_SCREEN_TWO.png';
 
   // Icons
   static const String BOT_NAV_SCAN = ICON_PREFIX + 'bot_nav_scan.png';
