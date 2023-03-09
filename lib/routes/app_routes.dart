@@ -11,4 +11,5 @@ abstract class Routes {
   static const CREATE_PASSWORD = '/create_password';
   static const HOME = '/home';
   static const VERIFY_BNPL = '/verify_bnpl';
+  static const VOOLO_ACCOUNT = '/voolo_account';
 }

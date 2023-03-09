@@ -15,6 +15,8 @@ import 'package:voolo_app/modules/verify_otp/verify_otp_binding.dart';
 import 'package:voolo_app/modules/verify_otp/view/verify_otp_screen.dart';
 
 import 'package:get/get.dart';
+import 'package:voolo_app/modules/voolo_account/view/voolo_account_screen.dart';
+import 'package:voolo_app/modules/voolo_account/voolo_account_binding.dart';
 
 part 'app_routes.dart';
 
@@ -59,6 +61,12 @@ class AppPages {
       name: Routes.VERIFY_BNPL,
       page: () => const VerifyBnplScreen(),
       binding: VerifyBnplBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: Routes.VOOLO_ACCOUNT,
+      page: () => const VooloAccountScreen(),
+      binding: VooloAccountBinding(),
       transition: Transition.rightToLeft,
     ),
   ];

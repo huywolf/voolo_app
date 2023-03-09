@@ -79,7 +79,7 @@ class AccountTab extends GetView<HomeController> {
           AccountItem(
             icon: Image.asset(Assets.ACC_PERSON, height: 25),
             title: "voolo_account".tr,
-            onTap: () {},
+            onTap: () => Get.toNamed(Routes.VOOLO_ACCOUNT),
           ),
           AccountItem(
             icon: Image.asset(Assets.ACC_BNPL_ACCOUNT, height: 24),
