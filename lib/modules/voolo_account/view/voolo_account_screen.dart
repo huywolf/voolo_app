@@ -1,12 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:voolo_app/modules/auth/view/widgets/blurry_container.dart';
 import 'package:get/get.dart';
-import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
 import 'package:voolo_app/shared/shared.dart';
+import 'package:voolo_app/shared/widgets/input/default_textfield.dart';
 
 import '../controller/voolo_account_controller.dart';
 
@@ -50,19 +49,41 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
     return Container(
       height: Get.height,
       width: Get.width,
-      padding: const EdgeInsets.symmetric(horizontal: Dimension.SCAFFOLD_HOR_PADDING),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 120),
-            Text(
-              "enter_otp".tr,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28, fontFamily: "Roboto"),
-            ),
-            const SizedBox(height: 20),
-            const SizedBox(height: 50),
-          ],
+        child: Form(
+          key: controller.formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 30),
+              DefaultTextField(
+                controller: controller.fullnameController,
+                labelText: "full_name".tr,
+                validator: ValidateUtil().validateFullName,
+              ),
+              const SizedBox(height: 30),
+              DefaultTextField(
+                controller: controller.phoneNumberController,
+                labelText: "phone_number".tr,
+                validator: ValidateUtil().validatePhoneNumber,
+              ),
+              const SizedBox(height: 30),
+              DefaultTextField(
+                controller: controller.emailController,
+                labelText: "email".tr,
+                validator: ValidateUtil().validateEmail,
+              ),
+              const SizedBox(height: 30),
+              DefaultTextField(
+                controller: controller.passwordController,
+                labelText: "password".tr,
+                obscureText: true,
+                validator: ValidateUtil().validatePassword,
+              ),
+              const SizedBox(height: 50),
+            ],
+          ),
         ),
       ),
     );

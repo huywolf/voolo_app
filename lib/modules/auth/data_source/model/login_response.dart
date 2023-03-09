@@ -35,12 +35,15 @@ class LoginResponse {
 @JsonSerializable()
 class LoginResponseData {
   LoginResponseData({
+    this.id,
     this.isBNPL,
     this.verifyEmail,
     this.verifyPhone,
     this.refreshToken,
   });
 
+  @JsonKey(name: '_id')
+  final String? id;
   @JsonKey(name: 'isBNPL')
   final bool? isBNPL;
   @JsonKey(name: 'verifyEmail')

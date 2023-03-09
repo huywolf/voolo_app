@@ -20,7 +20,7 @@ class ServerErrorCode {
       case 8000:
         return 'invalid_email'.tr;
       default:
-        return 'default_error_msg';
+        return 'default_error_msg'.tr;
     }
   }
 }

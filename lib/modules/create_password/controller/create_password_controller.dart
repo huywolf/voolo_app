@@ -69,8 +69,10 @@ class CreatePasswordController extends GetxController {
           if (loginResponse.status == true) {
             if (loginResponse.token != null && loginResponse.token!.isNotEmpty) {
               final prefs = Get.find<SharedPreferences>();
-              Map<String, dynamic> payload = Jwt.parseJwt(loginResponse.token!);
               prefs.setString(StorageConstants.ACCESS_TOKEN, loginResponse.token!);
+              prefs.setString(StorageConstants.USER_ID, loginResponse.data?.id ?? '');
+
+              Map<String, dynamic> payload = Jwt.parseJwt(loginResponse.token!);
               if (payload.containsKey('email')) {
                 prefs.setString(StorageConstants.EMAIL, loginResponse.token!);
               }

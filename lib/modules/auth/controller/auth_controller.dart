@@ -109,8 +109,10 @@ class AuthController extends GetxController {
       } else {
         if (res.token != null && res.token!.isNotEmpty) {
           final prefs = Get.find<SharedPreferences>();
-          Map<String, dynamic> payload = Jwt.parseJwt(res.token!);
           prefs.setString(StorageConstants.ACCESS_TOKEN, res.token!);
+          prefs.setString(StorageConstants.USER_ID, res.data?.id ?? '');
+
+          Map<String, dynamic> payload = Jwt.parseJwt(res.token!);
           if (payload.containsKey('email')) {
             prefs.setString(StorageConstants.EMAIL, res.token!);
           }
