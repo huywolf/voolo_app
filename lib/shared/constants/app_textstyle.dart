@@ -15,7 +15,7 @@ class AppTextStyles {
 
   static const TextStyle APP_BAR_TITLE = TextStyle(
     color: ColorConstants.BLACK_TEXT,
-    fontSize: AppTextStyles.MIDLE_LARGE_FS,
+    fontSize: 22,
     fontWeight: FontWeight.w600,
   );
 

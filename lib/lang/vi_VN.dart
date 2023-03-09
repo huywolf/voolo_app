@@ -38,6 +38,11 @@ const Map<String, String> vi_VN = {
   'create_password': 'Tạo mật khẩu',
   'password_must_be_6_character': 'Mật khẩu tối thiểu 6 ký tự, 1 ký tự hoa, 1 ký tự số',
   'choose_language': 'Chọn ngôn ngữ',
+  'individual': 'Cá nhân',
+  'prepaid_account': 'Tài khoản mua trước trả sau',
+  'payment_plan': 'Kế hoạch thanh toán',
+  'setting': 'Cài đặt',
+  'frequently_question': 'Các câu hỏi thường gặp',
 
   // Validate message
   'default_error_msg': 'Đã có lỗi xảy ra, vui lòng thử lại sau.',

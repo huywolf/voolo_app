@@ -18,14 +18,15 @@ class AccountTab extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text(
-          'Cá nhân',
+        leading: const SizedBox(),
+        title: Text(
+          'individual'.tr,
           style: AppTextStyles.APP_BAR_TITLE,
         ),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 15),
-            child: SvgPicture.asset(Assets.ICON_NOTIFICATION, height: 36),
+            child: SvgPicture.asset(Assets.ICON_NOTIFICATION, height: 35),
           ),
         ],
       ),
@@ -78,16 +79,16 @@ class AccountTab extends GetView<HomeController> {
           AccountItem(
             icon: Image.asset(Assets.ACC_PERSON, height: 25),
             title: "voolo_account".tr,
-            onTap: () => Get.toNamed(Routes.VERIFY_BNPL),
-          ),
-          AccountItem(
-            icon: Image.asset(Assets.ACC_BNPL_ACCOUNT, height: 25),
-            title: "Tài khoản mua trước trả sau".tr,
             onTap: () {},
           ),
           AccountItem(
+            icon: Image.asset(Assets.ACC_BNPL_ACCOUNT, height: 24),
+            title: "prepaid_account".tr,
+            onTap: () => Get.toNamed(Routes.VERIFY_BNPL),
+          ),
+          AccountItem(
             icon: Image.asset(Assets.ACC_STAR, height: 25),
-            title: "Kế hoạch thanh toán".tr,
+            title: "payment_plan".tr,
             onTap: () {},
           ),
           const SizedBox(height: 10),
@@ -113,12 +114,12 @@ class AccountTab extends GetView<HomeController> {
           const SizedBox(height: 10),
           AccountItem(
             icon: Image.asset(Assets.ACC_SETTING, height: 25),
-            title: "Cài đặt".tr,
+            title: "setting".tr,
             onTap: () {},
           ),
           AccountItem(
             icon: Image.asset(Assets.ACC_QUESTION, height: 25),
-            title: "Các câu hỏi thường gặp".tr,
+            title: "frequently_question".tr,
             onTap: () {},
           ),
           AccountItem(

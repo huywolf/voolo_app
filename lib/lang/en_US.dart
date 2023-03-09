@@ -38,6 +38,11 @@ const Map<String, String> en_US = {
   'create_password': 'Create password',
   'password_must_be_6_character': 'Password must be at least 6 characters, 1 uppercase letter, 1 number character',
   'choose_language': 'Choose language',
+  'individual': 'Individual',
+  'prepaid_account': 'Prepaid account',
+  'payment_plan': 'Payment plan',
+  'setting': 'Setting',
+  'frequently_question': 'Frequently questions',
 
   // Validate message
   'default_error_msg': 'An error occurred, please try again later.',
