@@ -7,7 +7,6 @@ import 'package:voolo_app/modules/introduction/introduction_binding.dart';
 import 'package:voolo_app/modules/introduction/introduction_screen.dart';
 import 'package:voolo_app/modules/select_language/select_language_binding.dart';
 import 'package:voolo_app/modules/select_language/select_language_screen.dart';
-import 'package:voolo_app/modules/splash/splash_binding.dart';
 import 'package:voolo_app/modules/splash/splash_screen.dart';
 import 'package:voolo_app/modules/verify_bnpl/verify_bnpl_binding.dart';
 import 'package:voolo_app/modules/verify_bnpl/view/verify_bnpl_screen.dart';
@@ -24,8 +23,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.SPLASH,
-      page: () => const SplashScreen(),
-      binding: SplashBinding(),
+      page: () => SplashScreen(),
     ),
     GetPage(
       name: Routes.SELECT_LANGUAGE,
