@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'verify_otp_response.dart';
+part of 'update_user_info_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-VerifyOtpResponse _$VerifyOtpResponseFromJson(Map<String, dynamic> json) =>
-    VerifyOtpResponse(
+UpdateUserInfoResponse _$UpdateUserInfoResponseFromJson(
+        Map<String, dynamic> json) =>
+    UpdateUserInfoResponse(
       status: json['status'] as bool?,
       message: json['message'] as String?,
       statusCode: json['statusCode'] as int?,
-      countFail: json['countFail'] as int?,
     );
 
-Map<String, dynamic> _$VerifyOtpResponseToJson(VerifyOtpResponse instance) =>
+Map<String, dynamic> _$UpdateUserInfoResponseToJson(
+        UpdateUserInfoResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'message': instance.message,
       'statusCode': instance.statusCode,
-      'countFail': instance.countFail,
+      'message': instance.message,
     };

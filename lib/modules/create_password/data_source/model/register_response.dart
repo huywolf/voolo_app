@@ -21,5 +21,6 @@ class RegisterResponse extends DioResponse {
   // final int? statusCode;
 
   factory RegisterResponse.fromJson(Map<String, dynamic> json) => _$RegisterResponseFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$RegisterResponseToJson(this);
 }

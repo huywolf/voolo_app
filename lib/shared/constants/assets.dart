@@ -43,4 +43,7 @@ class Assets {
   static const String ICON_SUCCESS = SVG_PREFIX + 'icon_success.svg';
   static const String ICON_UNSUCCESS = SVG_PREFIX + 'icon_unsucess.svg';
   static const String ICON_NOTIFICATION = SVG_PREFIX + 'icon_notification.svg';
+  static const String ICON_EDIT_TEXTFIELD = SVG_PREFIX + 'icon_edit_textfield.svg';
+  static const String ICON_CHECK = SVG_PREFIX + 'icon_check.svg';
+  static const String ICON_CLOSE = SVG_PREFIX + 'icon_close.svg';
 }

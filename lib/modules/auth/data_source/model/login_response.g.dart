@@ -30,6 +30,7 @@ Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
 
 LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>
     LoginResponseData(
+      id: json['_id'] as String?,
       isBNPL: json['isBNPL'] as bool?,
       verifyEmail: json['verifyEmail'] as bool?,
       verifyPhone: json['verifyPhone'] as bool?,
@@ -38,6 +39,7 @@ LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$LoginResponseDataToJson(LoginResponseData instance) =>
     <String, dynamic>{
+      '_id': instance.id,
       'isBNPL': instance.isBNPL,
       'verifyEmail': instance.verifyEmail,
       'verifyPhone': instance.verifyPhone,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
-import 'package:voolo_app/shared/constants/constants.dart';
 
 class ListItem extends StatelessWidget {
   const ListItem({

@@ -17,6 +17,8 @@ class ServerErrorCode {
         return 'that_email_is_taken'.tr;
       case 3000:
         return 'expired_otp'.tr;
+      case 5002:
+        return 'email_already_exists'.tr;
       case 8000:
         return 'invalid_email'.tr;
       default:

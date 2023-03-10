@@ -10,16 +10,27 @@ import 'package:voolo_app/routes/app_pages.dart';
 
 import '../data_source/repository/verify_bnpl_repository.dart';
 
+enum VerifyOtpType {
+  createNewAccount,
+  updateEmail,
+}
+
 class VerifyOtpScreenArg {
   VerifyOtpScreenArg({
     required this.fullName,
     required this.phoneNumber,
     required this.email,
+    required this.verifyOtpType,
+    required this.showAppBar,
+    required this.appBarTitle,
   });
 
   final String fullName;
   final String phoneNumber;
   final String email;
+  final VerifyOtpType verifyOtpType;
+  final bool showAppBar;
+  final String appBarTitle;
 }
 
 class VerifyOtpController extends GetxController {

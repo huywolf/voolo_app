@@ -11,7 +11,7 @@ class SuccessAlertDialog extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-  final String content;
+  final String? content;
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,17 @@ class SuccessAlertDialog extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
             ),
-            const SizedBox(height: 16),
-            Text(
-              content,
-              style: const TextStyle(fontSize: AppTextStyles.SMALL_FS),
-              textAlign: TextAlign.center,
-            ),
+            if (content != null)
+              Column(
+                children: [
+                  const SizedBox(height: 16),
+                  Text(
+                    content!,
+                    style: const TextStyle(fontSize: AppTextStyles.SMALL_FS),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
           ],
         ),
       ),

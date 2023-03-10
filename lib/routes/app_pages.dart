@@ -23,7 +23,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.SPLASH,
-      page: () => SplashScreen(),
+      page: () => const SplashScreen(),
     ),
     GetPage(
       name: Routes.SELECT_LANGUAGE,

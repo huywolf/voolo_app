@@ -43,6 +43,8 @@ const Map<String, String> en_US = {
   'payment_plan': 'Payment plan',
   'setting': 'Setting',
   'frequently_question': 'Frequently questions',
+  'updated_name_successfully': 'Updated name successfully',
+  'email_already_exists': 'New email already exists. Please enter another email.',
 
   // Validate message
   'default_error_msg': 'An error occurred, please try again later.',

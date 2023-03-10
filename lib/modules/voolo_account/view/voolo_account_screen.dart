@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:voolo_app/modules/auth/view/widgets/blurry_container.dart';
 import 'package:get/get.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
+import 'package:voolo_app/shared/constants/assets.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:voolo_app/shared/widgets/input/default_textfield.dart';
 
@@ -37,7 +39,16 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
                 right: 0,
                 child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 60.0, sigmaY: 60.0), child: const SizedBox()),
               ),
-              _buildMainContent(context),
+              Obx(
+                (() {
+                  if (controller.showLoading.value) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  return _buildMainContent(context);
+                }),
+              ),
             ],
           ),
         ),
@@ -51,40 +62,87 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
       width: Get.width,
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: SingleChildScrollView(
-        child: Form(
-          key: controller.formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 30),
-              DefaultTextField(
-                controller: controller.fullnameController,
-                labelText: "full_name".tr,
-                validator: ValidateUtil().validateFullName,
-              ),
-              const SizedBox(height: 30),
-              DefaultTextField(
-                controller: controller.phoneNumberController,
-                labelText: "phone_number".tr,
-                validator: ValidateUtil().validatePhoneNumber,
-              ),
-              const SizedBox(height: 30),
-              DefaultTextField(
-                controller: controller.emailController,
-                labelText: "email".tr,
-                validator: ValidateUtil().validateEmail,
-              ),
-              const SizedBox(height: 30),
-              DefaultTextField(
-                controller: controller.passwordController,
-                labelText: "password".tr,
-                obscureText: true,
-                validator: ValidateUtil().validatePassword,
-              ),
-              const SizedBox(height: 50),
-            ],
-          ),
+        child: Column(
+          children: [
+            const SizedBox(height: 30),
+            DefaultTextField(
+              controller: controller.fullnameController,
+              labelText: "full_name".tr,
+              errorText: controller.fullnameErrorText.value,
+              readOnly: controller.editingControllerType.value != EditingControllerType.fullname,
+              suffixEditIcon: controller.editingControllerType.value != EditingControllerType.fullname
+                  ? _buildSuffixIcon(type: EditingControllerType.fullname)
+                  : null,
+              extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.fullname
+                  ? _buildExtendWidget(type: EditingControllerType.fullname)
+                  : null,
+            ),
+            const SizedBox(height: 30),
+            DefaultTextField(
+              controller: controller.phoneNumberController,
+              labelText: "phone_number".tr,
+              validator: ValidateUtil().validatePhoneNumber,
+              readOnly: true,
+            ),
+            const SizedBox(height: 30),
+            DefaultTextField(
+              controller: controller.emailController,
+              labelText: "email".tr,
+              validator: ValidateUtil().validateEmail,
+              errorText: controller.emailErrorText.value,
+              readOnly: controller.editingControllerType.value != EditingControllerType.email,
+              suffixEditIcon:
+                  controller.editingControllerType.value != EditingControllerType.email ? _buildSuffixIcon(type: EditingControllerType.email) : null,
+              extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.email
+                  ? _buildExtendWidget(type: EditingControllerType.email)
+                  : null,
+            ),
+            const SizedBox(height: 30),
+            DefaultTextField(
+              controller: controller.passwordController,
+              labelText: "password".tr,
+              obscureText: true,
+              showVisibilityIcon: false,
+              validator: ValidateUtil().validatePassword,
+              errorText: controller.passwordErrorText.value,
+              readOnly: controller.editingControllerType.value != EditingControllerType.password,
+              suffixEditIcon: controller.editingControllerType.value != EditingControllerType.password
+                  ? _buildSuffixIcon(type: EditingControllerType.password)
+                  : null,
+              extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.password
+                  ? _buildExtendWidget(type: EditingControllerType.password)
+                  : null,
+            ),
+            const SizedBox(height: 50),
+          ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildExtendWidget({required EditingControllerType type}) {
+    return Row(
+      children: [
+        const SizedBox(width: 8),
+        InkWell(
+          onTap: () => controller.updateUserInfo(type),
+          child: SvgPicture.asset(Assets.ICON_CHECK),
+        ),
+        const SizedBox(width: 8),
+        InkWell(
+          onTap: () => controller.onTapEditIcon(EditingControllerType.none),
+          child: SvgPicture.asset(Assets.ICON_CLOSE),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSuffixIcon({required EditingControllerType type}) {
+    return InkWell(
+      onTap: () => controller.onTapEditIcon(type),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10, right: 18),
+        child: SvgPicture.asset(Assets.ICON_EDIT_TEXTFIELD),
       ),
     );
   }

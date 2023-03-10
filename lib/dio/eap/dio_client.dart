@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/instance_manager.dart';
-import 'package:logger/logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:voolo_app/app_config.dart';
@@ -44,7 +44,9 @@ class DioClient {
           if (accessToken != null) {
             headers["Authorization"] = "Bearer $accessToken";
           }
-          Logger().i('Access Token: $accessToken');
+          if (kDebugMode) {
+            print('=== Access Token: $accessToken');
+          }
           options.headers.addAll(headers);
           return handler.next(options);
         },

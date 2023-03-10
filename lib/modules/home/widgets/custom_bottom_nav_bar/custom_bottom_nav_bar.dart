@@ -385,11 +385,11 @@ class CustomBottomNavBarState extends State<CustomBottomNavBar> with TickerProvi
           bubbleColor: widget.splashColor,
           activeColor: widget.activeColor,
           inactiveColor: widget.inactiveColor,
-          child: widget.tabBuilder?.call(i, isActive),
           iconData: widget.icons?.elementAt(i),
           iconScale: _iconScale,
           iconSize: widget.iconSize,
           onTap: () => widget.onTap(i),
+          child: widget.tabBuilder?.call(i, isActive),
         ),
       );
 

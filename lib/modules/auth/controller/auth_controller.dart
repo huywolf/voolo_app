@@ -68,6 +68,9 @@ class AuthController extends GetxController {
             fullName: registerFullNameController.text,
             phoneNumber: registerPhoneNumberController.text,
             email: registerEmailController.text,
+            verifyOtpType: VerifyOtpType.updateEmail,
+            showAppBar: false,
+            appBarTitle: '',
           ),
         );
       } else {
