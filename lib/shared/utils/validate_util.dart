@@ -119,4 +119,21 @@ class ValidateUtil {
     }
     return null;
   }
+
+  String? validateNewPassword(String? value, String oldPassword) {
+    if (value == null) return null;
+    if (value.isEmpty) {
+      return 'please_enter_value'.tr;
+    }
+    if (!value.contains(RegExp(r'[0-9]')) || !value.contains(RegExp(r'[A-Z]')) || !value.contains(RegExp(r'[a-z]'))) {
+      return 'invalid_password'.tr;
+    }
+    if (value.length < 6) {
+      return 'invalid_password'.tr;
+    }
+    if (value == oldPassword) {
+      return 'new_password_must_not_same_old_password'.tr;
+    }
+    return null;
+  }
 }

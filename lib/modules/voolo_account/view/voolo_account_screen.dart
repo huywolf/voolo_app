@@ -103,15 +103,8 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
               labelText: "password".tr,
               obscureText: true,
               showVisibilityIcon: false,
-              validator: ValidateUtil().validatePassword,
-              errorText: controller.passwordErrorText.value,
-              readOnly: controller.editingControllerType.value != EditingControllerType.password,
-              suffixEditIcon: controller.editingControllerType.value != EditingControllerType.password
-                  ? _buildSuffixIcon(type: EditingControllerType.password)
-                  : null,
-              extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.password
-                  ? _buildExtendWidget(type: EditingControllerType.password, context: context)
-                  : null,
+              readOnly: true,
+              suffixEditIcon: _buildSuffixIcon(type: EditingControllerType.password),
             ),
             const SizedBox(height: 50),
           ],

@@ -46,6 +46,11 @@ const Map<String, String> en_US = {
   'updated_name_successfully': 'Updated name successfully',
   'email_already_exists': 'New email already exists. Please enter another email.',
   'update_email_successfully': 'Email update successful',
+  'old_password': 'Old password',
+  'new_password': 'New password',
+  'confirm_password': 'Confirm password',
+  'change_password': 'Change Password',
+  'update_password_successfully': 'Password update successful',
 
   // Validate message
   'default_error_msg': 'An error occurred, please try again later.',
@@ -64,4 +69,6 @@ const Map<String, String> en_US = {
   'invalid_email': 'Invalid emal.',
   'invalid_password': 'Invalid password.',
   'password_do_not_match': 'Confirm password does not match.',
+  'new_password_must_not_same_old_password': 'The new password must be not same the old password',
+  'incorrect_old_passord': 'Incorrect old password',
 };

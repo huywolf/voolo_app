@@ -66,7 +66,7 @@ class VerifyOtpScreen extends GetView<VerifyOtpController> {
                           style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: AppTextStyles.SMALL_FS),
                           children: <TextSpan>[
                             TextSpan(
-                              text: EncodeString.encodeEmail(controller.screenArg.email),
+                              text: EncodeString.encodeEmail(controller.screenArg.newEmail ?? controller.screenArg.email),
                               style: const TextStyle(fontWeight: FontWeight.w700, fontSize: AppTextStyles.SMALL_FS),
                             ),
                           ],

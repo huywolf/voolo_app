@@ -28,16 +28,6 @@ class AuthController extends GetxController {
   final loginPasswordController = TextEditingController();
   final loginErrorText = Rxn<String>();
 
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
-
-  // @override
-  // void onReady() {
-  //   super.onReady();
-  // }
-
   void switchView(int index) {
     viewIndex.value = index;
     resetErrorText();

@@ -46,6 +46,11 @@ const Map<String, String> vi_VN = {
   'updated_name_successfully': 'Đã cập nhật họ tên thành công',
   'email_already_exists': 'Email mới đã tồn tại. Vui lòng nhập email khác.',
   'update_email_successfully': 'Cập nhật email thành công',
+  'old_password': 'Mật khẩu cũ',
+  'new_password': 'Mật khẩu mới',
+  'confirm_password': 'Mật khẩu xác nhận',
+  'change_password': 'Thay đổi mật khẩu',
+  'update_password_successfully': 'Cập nhật mật khẩu thành công',
 
   // Validate message
   'default_error_msg': 'Đã có lỗi xảy ra, vui lòng thử lại sau.',
@@ -64,4 +69,6 @@ const Map<String, String> vi_VN = {
   'invalid_email': 'Email không hợp lệ.',
   'invalid_password': 'Mật khẩu không hợp lệ.',
   'password_do_not_match': 'Xác nhận mật khẩu không khớp.',
+  'new_password_must_not_same_old_password': 'Mật khẩu mới không được trùng với mật khẩu cũ',
+  'incorrect_old_passord': 'Mật khẩu cũ không chính xác',
 };

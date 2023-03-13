@@ -9,8 +9,10 @@ import 'package:voolo_app/routes/app_pages.dart';
 import 'package:voolo_app/shared/constants/server_error_code.dart';
 import 'package:voolo_app/shared/shared.dart';
 import 'package:voolo_app/shared/widgets/dialogs/success_alert_dialog.dart';
+import 'package:voolo_app/shared/widgets/dialogs/unsuccess_alert_dialog.dart';
 
 import '../data_source/repository/voolo_account_repository.dart';
+import '../view/widgets/change_password_dialog.dart';
 
 enum EditingControllerType {
   none,
@@ -30,10 +32,14 @@ class VooloAccountController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  final GlobalKey<FormState> changePasswordFormKey = GlobalKey<FormState>();
+  final changeOldPasswordController = TextEditingController();
+  final changeNewPasswordController = TextEditingController();
+  final changeConfirmPasswordController = TextEditingController();
+
   final Rxn<String> fullnameErrorText = Rxn<String>();
   final Rxn<String> phoneNumberErrorText = Rxn<String>();
   final Rxn<String> emailErrorText = Rxn<String>();
-  final Rxn<String> passwordErrorText = Rxn<String>();
 
   final showLoading = false.obs;
   Rx<EditingControllerType> editingControllerType = EditingControllerType.none.obs;
@@ -49,13 +55,15 @@ class VooloAccountController extends GetxController {
 
   void onTapEditIcon(EditingControllerType type) {
     editingControllerType.value = type;
+    if (type == EditingControllerType.password) {
+      Get.dialog(const ChangePasswordDialog());
+    }
   }
 
   void resetError() {
     fullnameErrorText.value = null;
     phoneNumberErrorText.value = null;
     emailErrorText.value = null;
-    passwordErrorText.value = null;
   }
 
   Future<void> getUserInfo() async {
@@ -98,7 +106,23 @@ class VooloAccountController extends GetxController {
         }
         break;
       case EditingControllerType.password:
-        passwordErrorText.value = ValidateUtil().validatePassword(passwordController.text);
+        if (changePasswordFormKey.currentState!.validate()) {
+          Get.back();
+          EasyLoading.show(status: 'loading'.tr);
+          final res = await repo.updateUserInfo(userId: userId, data: {
+            'password': changeOldPasswordController.text,
+            'new_password': changeNewPasswordController.text,
+          });
+          EasyLoading.dismiss();
+          if (res.status == false) {
+            Get.dialog(UnSuccessAlertDialog(content: ServerErrorCode().convertStatusCodeToMessage(res.statusCode)));
+          } else {
+            Get.dialog(SuccessAlertDialog(title: 'update_password_successfully'.tr, content: null));
+          }
+          changeOldPasswordController.clear();
+          changeNewPasswordController.clear();
+          changeConfirmPasswordController.clear();
+        }
         break;
       default:
     }

@@ -9,6 +9,8 @@ class ServerErrorCode {
         return 'account_do_not_exist'.tr;
       case 1002:
         return 'account_do_not_exist'.tr;
+      case 1003:
+        return 'incorrect_old_passord'.tr;
       case 1004:
         return 'invalid_otp'.tr;
       case 2010:
