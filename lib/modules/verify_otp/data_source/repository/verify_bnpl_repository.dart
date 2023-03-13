@@ -26,4 +26,22 @@ class VerifyOtpRepository {
       return VerifyOtpResponse(statusCode: 0);
     }
   }
+
+  Future<VerifyOtpResponse> verifyOtpUpdateAccount({
+    required String email,
+    required String newEmail,
+    required String otp,
+  }) async {
+    try {
+      final res = await api.verifyOtpUpdateAccount({
+        "email": email,
+        "new_email": newEmail,
+        "otp": otp,
+      });
+      return res;
+    } catch (err) {
+      Logger().e('VerifyOtpRepository -> VerifyOtp()', err);
+      return VerifyOtpResponse(statusCode: 0);
+    }
+  }
 }

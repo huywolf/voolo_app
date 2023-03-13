@@ -12,4 +12,7 @@ abstract class VerifyOtpApi {
 
   @POST(Endpoints.verifyOtp)
   Future<VerifyOtpResponse> verifyOtp(@Body() Map<String, dynamic> data);
+
+  @POST(Endpoints.verifyOtpUpdateAccount)
+  Future<VerifyOtpResponse> verifyOtpUpdateAccount(@Body() Map<String, dynamic> data);
 }

@@ -51,6 +51,13 @@ class VooloAccountController extends GetxController {
     editingControllerType.value = type;
   }
 
+  void resetError() {
+    fullnameErrorText.value = null;
+    phoneNumberErrorText.value = null;
+    emailErrorText.value = null;
+    passwordErrorText.value = null;
+  }
+
   Future<void> getUserInfo() async {
     final userId = prefs.getString(StorageConstants.USER_ID);
     if (userId == null) return;
@@ -67,7 +74,7 @@ class VooloAccountController extends GetxController {
     }
   }
 
-  Future<void> updateUserInfo(EditingControllerType type) async {
+  Future<void> updateUserInfo(EditingControllerType type, BuildContext context) async {
     final userId = prefs.getString(StorageConstants.USER_ID);
     if (userId == null) return;
     switch (type) {
@@ -87,7 +94,7 @@ class VooloAccountController extends GetxController {
       case EditingControllerType.email:
         emailErrorText.value = ValidateUtil().validateEmail(emailController.text);
         if (emailErrorText.value == null) {
-          sendOtpUpdateAccount();
+          sendOtpUpdateAccount(context);
         }
         break;
       case EditingControllerType.password:
@@ -97,7 +104,7 @@ class VooloAccountController extends GetxController {
     }
   }
 
-  void sendOtpUpdateAccount() async {
+  void sendOtpUpdateAccount(BuildContext context) async {
     EasyLoading.show(status: 'loading'.tr);
     final res = await repo.sendOtpUpdateAccount(
       email: oldEmail,
@@ -111,12 +118,23 @@ class VooloAccountController extends GetxController {
         arguments: VerifyOtpScreenArg(
           fullName: '',
           phoneNumber: '',
-          email: emailController.text,
+          email: oldEmail,
+          newEmail: emailController.text,
           verifyOtpType: VerifyOtpType.updateEmail,
           showAppBar: true,
           appBarTitle: 'voolo_account'.tr,
         ),
-      );
+      )?.then((value) {
+        if (value is bool && value == true) {
+          Get.dialog(SuccessAlertDialog(
+            title: 'update_email_successfully'.tr,
+            content: null,
+          ));
+          AppFocus.unfocus(context);
+          resetError();
+          editingControllerType.value = EditingControllerType.none;
+        }
+      });
     } else {
       emailErrorText.value = ServerErrorCode().convertStatusCodeToMessage(res.statusCode);
     }

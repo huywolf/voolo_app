@@ -68,6 +68,7 @@ class AuthController extends GetxController {
             fullName: registerFullNameController.text,
             phoneNumber: registerPhoneNumberController.text,
             email: registerEmailController.text,
+            newEmail: null,
             verifyOtpType: VerifyOtpType.updateEmail,
             showAppBar: false,
             appBarTitle: '',
@@ -113,6 +114,7 @@ class AuthController extends GetxController {
         if (res.token != null && res.token!.isNotEmpty) {
           final prefs = Get.find<SharedPreferences>();
           prefs.setString(StorageConstants.ACCESS_TOKEN, res.token!);
+          prefs.setString(StorageConstants.REFRESH_TOKEN, res.data?.refreshToken ?? '');
           prefs.setString(StorageConstants.USER_ID, res.data?.id ?? '');
 
           Map<String, dynamic> payload = Jwt.parseJwt(res.token!);

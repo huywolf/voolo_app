@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
 import 'package:voolo_app/shared/constants/assets.dart';
 
@@ -16,9 +17,10 @@ class SuccessAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      insetPadding: const EdgeInsets.all(15),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       content: SizedBox(
-        width: MediaQuery.of(context).size.width - 20,
+        width: Get.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,

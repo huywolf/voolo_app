@@ -74,7 +74,7 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
                   ? _buildSuffixIcon(type: EditingControllerType.fullname)
                   : null,
               extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.fullname
-                  ? _buildExtendWidget(type: EditingControllerType.fullname)
+                  ? _buildExtendWidget(type: EditingControllerType.fullname, context: context)
                   : null,
             ),
             const SizedBox(height: 30),
@@ -94,7 +94,7 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
               suffixEditIcon:
                   controller.editingControllerType.value != EditingControllerType.email ? _buildSuffixIcon(type: EditingControllerType.email) : null,
               extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.email
-                  ? _buildExtendWidget(type: EditingControllerType.email)
+                  ? _buildExtendWidget(type: EditingControllerType.email, context: context)
                   : null,
             ),
             const SizedBox(height: 30),
@@ -110,7 +110,7 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
                   ? _buildSuffixIcon(type: EditingControllerType.password)
                   : null,
               extendSuffixWidget: controller.editingControllerType.value == EditingControllerType.password
-                  ? _buildExtendWidget(type: EditingControllerType.password)
+                  ? _buildExtendWidget(type: EditingControllerType.password, context: context)
                   : null,
             ),
             const SizedBox(height: 50),
@@ -120,12 +120,12 @@ class VooloAccountScreen extends GetView<VooloAccountController> {
     );
   }
 
-  Widget _buildExtendWidget({required EditingControllerType type}) {
+  Widget _buildExtendWidget({required EditingControllerType type, required BuildContext context}) {
     return Row(
       children: [
         const SizedBox(width: 8),
         InkWell(
-          onTap: () => controller.updateUserInfo(type),
+          onTap: () => controller.updateUserInfo(type, context),
           child: SvgPicture.asset(Assets.ICON_CHECK),
         ),
         const SizedBox(width: 8),

@@ -20,6 +20,7 @@ class VerifyOtpScreenArg {
     required this.fullName,
     required this.phoneNumber,
     required this.email,
+    required this.newEmail,
     required this.verifyOtpType,
     required this.showAppBar,
     required this.appBarTitle,
@@ -28,6 +29,7 @@ class VerifyOtpScreenArg {
   final String fullName;
   final String phoneNumber;
   final String email;
+  final String? newEmail;
   final VerifyOtpType verifyOtpType;
   final bool showAppBar;
   final String appBarTitle;
@@ -97,7 +99,15 @@ class VerifyOtpController extends GetxController {
     }
   }
 
-  Future<void> verifyOtp() async {
+  void verifyOtp() {
+    if (screenArg.verifyOtpType == VerifyOtpType.createNewAccount) {
+      verifyOtpCreateAccount();
+    } else if (screenArg.verifyOtpType == VerifyOtpType.updateEmail) {
+      verifyOtpUpdateAccount();
+    }
+  }
+
+  Future<void> verifyOtpCreateAccount() async {
     EasyLoading.show(status: 'loading'.tr);
     final res = await repo.verifyOtp(
       fullname: screenArg.fullName,
@@ -114,19 +124,38 @@ class VerifyOtpController extends GetxController {
             phoneNumber: screenArg.phoneNumber,
           ));
     } else {
-      if (res.statusCode == 1004) {
-        countFail.value += 1;
-        validateOtpError.value = '${'invalid_otp'.tr} (${countFail.value}/5)';
-        return;
-      }
-      if (res.statusCode == 3000) {
-        validateOtpError.value = 'expired_otp'.tr;
-        return;
-      }
-      if (res.statusCode == 0) {
-        validateOtpError.value = 'default_error_msg'.tr;
-        return;
-      }
+      returnVerifyOtpError(res.statusCode);
+    }
+  }
+
+  Future<void> verifyOtpUpdateAccount() async {
+    EasyLoading.show(status: 'loading'.tr);
+    final res = await repo.verifyOtpUpdateAccount(
+      email: screenArg.email,
+      newEmail: screenArg.newEmail ?? '',
+      otp: textEditingController.text,
+    );
+    EasyLoading.dismiss();
+    if (res.status == true) {
+      Get.back(result: true);
+    } else {
+      returnVerifyOtpError(res.statusCode);
+    }
+  }
+
+  void returnVerifyOtpError(int? statusCode) {
+    if (statusCode == 1004) {
+      countFail.value += 1;
+      validateOtpError.value = '${'invalid_otp'.tr} (${countFail.value}/5)';
+      return;
+    }
+    if (statusCode == 3000) {
+      validateOtpError.value = 'expired_otp'.tr;
+      return;
+    }
+    if (statusCode == 0) {
+      validateOtpError.value = 'default_error_msg'.tr;
+      return;
     }
   }
 }

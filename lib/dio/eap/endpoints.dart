@@ -8,4 +8,5 @@ class Endpoints {
   static const getUserInfo = '/user/{id}';
   static const updateUserInfo = '/user/{id}';
   static const sendOtpUpdateAccount = '/auth/sendOtpUpdateAccountAdmin';
+  static const verifyOtpUpdateAccount = '/auth/verifyOtpUpdateAccountAdmin';
 }

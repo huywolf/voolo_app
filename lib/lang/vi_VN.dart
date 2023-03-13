@@ -45,6 +45,7 @@ const Map<String, String> vi_VN = {
   'frequently_question': 'Các câu hỏi thường gặp',
   'updated_name_successfully': 'Đã cập nhật họ tên thành công',
   'email_already_exists': 'Email mới đã tồn tại. Vui lòng nhập email khác.',
+  'update_email_successfully': 'Cập nhật email thành công',
 
   // Validate message
   'default_error_msg': 'Đã có lỗi xảy ra, vui lòng thử lại sau.',
