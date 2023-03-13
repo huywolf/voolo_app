@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:voolo_app/modules/verify_bnpl/controller/verify_bnpl_controller.dart';
 import 'package:voolo_app/shared/constants/app_textstyle.dart';
 
-class VerifyBnplScreen extends GetView<VerifyBnplController> {
-  const VerifyBnplScreen({super.key});
+import '../controller/bnpl_account_controller.dart';
+
+class BnplAccountScreen extends GetView<BnplAccountController> {
+  const BnplAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'verify_bnpl_api.dart';
+part of 'bnpl_account_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'verify_bnpl_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _VerifyBnplApi implements VerifyBnplApi {
-  _VerifyBnplApi(
+class _BnplAccountApi implements BnplAccountApi {
+  _BnplAccountApi(
     this._dio, {
     this.baseUrl,
   });

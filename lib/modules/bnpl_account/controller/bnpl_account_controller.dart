@@ -3,12 +3,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
 import '../../../shared/shared.dart';
-import '../data_source/repository/verify_bnpl_repository.dart';
+import '../data_source/repository/bnpl_account_repository.dart';
 
-class VerifyBnplController extends GetxController {
-  VerifyBnplController();
+class BnplAccountController extends GetxController {
+  BnplAccountController();
 
-  final VerifyBnplRepository repo = VerifyBnplRepository();
+  final BnplAccountRepository repo = BnplAccountRepository();
 
   late String phoneNumber;
   RxInt step = 0.obs;
